@@ -1,0 +1,31 @@
+@import "typo/webfonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] { 
+  @apply !hidden;
+}
+
+:root {
+  --header-height-sm: 4.5rem;  /* 72 px */
+  --header-height-lg: 6.5rem;  /* 104 px */
+}
+
+main {
+  @apply flex-1;
+}
+
+p:not(:last-child) {
+}
+
+strong {
+}
+
+h1 {}
+
+h2 {}
+
+h3 {
+}

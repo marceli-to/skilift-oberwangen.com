@@ -1,0 +1,4 @@
+de:
+  name: Deutsch
+  url: '{{ config:app:url }}'
+  locale: de

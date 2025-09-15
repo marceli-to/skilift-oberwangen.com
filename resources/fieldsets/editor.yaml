@@ -1,0 +1,32 @@
+title: Editor
+fields:
+  -
+    handle: editor
+    field:
+      buttons:
+        - h2
+        - h3
+        - h4
+        - bold
+        - italic
+        - unorderedlist
+        - removeformat
+        - superscript
+        - anchor
+        - nobr
+        - lead
+      toolbar_mode: floating
+      remove_empty_nodes: true
+      type: bard
+      display: Text
+      container: assets
+      localizable: true
+      collapse: true
+      sets:
+        editor_elements:
+          display: Elemente
+          icon: addon-boxes-stack
+          sets:
+            neues_set:
+              display: 'Neues Set'
+              fields: {  }
