@@ -17,6 +17,10 @@ main {
   @apply flex-1;
 }
 
+.bg-pattern {
+  @apply bg-[repeating-linear-gradient(-45deg,_#38bdf8_0px,_#38bdf8_8px,_#ffffff_8px,_#ffffff_11px)]
+}
+
 p:not(:last-child) {
 }
 
