@@ -1,7 +1,7 @@
 <div 
-  class="fixed left-0 top-145 w-full z-10"
+  class="absolute right-20 lg:right-40 top-0 z-90 bg-red-100"
   x-cloak 
-  x-show="isOpen"
+  x-show="menu"
   x-transition:enter="transition ease-out duration-100"
   x-transition:enter-start="opacity-0"
   x-transition:enter-end="opacity-100"
@@ -9,7 +9,6 @@
   x-transition:leave-start="opacity-100"
   x-transition:leave-end="opacity-0">
   
-  <nav class="flex flex-col gap-y-15 lg:gap-y-20 w-full mx-auto max-w-outer-container lg:px-30">
     <ul class="leading-none">
       {{ nav:main }}
         {{ partial:menu/main/item }}

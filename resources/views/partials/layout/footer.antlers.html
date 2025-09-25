@@ -1,10 +1,10 @@
-<footer class="w-full bg-navy sm:bg-red-100 md:bg-yellow-100 lg:bg-green-100 py-30 lg:py-50 text-white">
+<footer class="w-full bg-navy py-30 lg:py-50 text-white">
   {{ partial:layout/container/outer }}
     <div class="flex flex-col gap-y-30 md:flex-row md:gap-x-30 xl:gap-x-80">
       <a href="/" 
         aria-label="Startseite" 
         class="block group">
-        {{ partial:icons/logo class="max-w-160 lg:max-w-none group-hover:scale-[0.99] transition-transform" }}
+        {{ partial:icons/logo class="h-auto max-w-100 md:max-w-160 lg:max-w-none" }}
       </a>
       <div class="w-full flex flex-col gap-y-30 md:grid md:grid-cols-8 lg:gap-y-0 md:gap-x-30 text-xxs [&_a]:no-underline [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a:hover]:underline [&_h4]:text-xs [&_h4]:mb-16">
         {{ if footer:contact }}

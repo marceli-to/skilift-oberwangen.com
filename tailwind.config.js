@@ -40,6 +40,7 @@ export default {
       },
 
       fontSize: {
+        'tiny': '0.75rem',  // 12px
         'xxs':   '0.875rem',   // 14px
         'xs':   '1rem',        // 16px
         'sm':   '1.125rem',    // 18px

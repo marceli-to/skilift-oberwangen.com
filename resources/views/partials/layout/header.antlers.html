@@ -1,9 +1,38 @@
-<header class="relative w-full bg-green-500">
-  <div class="relative z-20 bg-[#002D55] bg-[radial-gradient(circle_at_50%_35%,_#0093c8_0%,_#0f4f77_30%,_#002D55_50%)] after:bg-white after:content-[''] after:block after:w-full after:h-[20%] md:after:h-[30%] after:bottom-0 after:left-0 after:absolute after:z-10">
-    {{ partial:components/media/image 
-      :image="header_image" 
-      eager="true"
-      wrapperClass="w-full mx-auto px-20 max-w-outer-container relative z-20 top-[5vh]"
-      class="w-full h-auto aspect-[16/7] md:aspect-[16/6] object-cover" }}
+<header class="relative w-full mb-50">
+
+  <div class="w-full absolute text-white z-50 top-45 md:top-80 lg:top-120">
+    {{ partial:layout/container/outer }}
+      
+      <span class="text-tiny xs:text-xxs lg:text-sm leading-none absolute xs:-top-2">
+        Seit 1973 am Bügeln
+      </span>
+      
+      <a 
+        href="/" 
+        aria-label="Startseite" 
+        class="block group">
+        {{ partial:icons/logo class="h-auto max-w-100 md:max-w-160 lg:max-w-none absolute -top-32 md:-top-66 lg:-top-80 left-1/2 -translate-x-1/2" }}
+      </a>
+
+      <span class="absolute right-20 lg:right-40 -top-8 lg:-top-8">
+        {{ partial:menu/main/button class="text-white w-30 lg:w-36 h-auto" }}
+      </span>
+
+    {{ partial:menu/main/wrapper }}
+    
+    {{ /partial:layout/container/outer }}
   </div>
+
+  <div class="absolute inset-0 bg-navy bg-[radial-gradient(circle_at_50%_35%,_#0093c8_0%,_#0f4f77_30%,_#002D55_50%)] z-10"></div>
+
+  <div class="absolute bottom-0 left-0 w-full h-[35%] bg-white z-20"></div>
+
+  <div class="relative z-30 w-full mx-auto px-20 lg:px-40 max-w-outer-container pt-[65px] md:pt-100 lg:pt-150">
+    {{ partial:components/media/image
+      :image="header_image"
+      eager="true"
+      wrapperClass="w-full"
+      class="w-full h-auto aspect-[16/8] xs:aspect-[16/7] xl:aspect-[16/6] object-cover" }}
+  </div>
+
 </header>
