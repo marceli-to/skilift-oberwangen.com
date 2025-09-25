@@ -5,26 +5,66 @@ tabs:
       -
         fields:
           -
-            handle: address
+            handle: contact
             field:
               buttons:
                 - bold
                 - removeformat
                 - anchor
+                - h4
               toolbar_mode: floating
               remove_empty_nodes: true
+              link_collections:
+                - pages
+              container: assets
               type: bard
-              display: Adresse
-              localizable: true
+              display: Kontakt
+              localizable: false
           -
-            handle: opening_hours
+            handle: catering
             field:
               buttons:
                 - bold
                 - removeformat
                 - anchor
+                - h4
               toolbar_mode: floating
               remove_empty_nodes: true
+              link_collections:
+                - pages
+              container: assets
               type: bard
-              display: Öffnungszeiten
-              localizable: true
+              display: 'Arosa Stübli'
+              localizable: false
+          -
+            handle: operations
+            field:
+              buttons:
+                - bold
+                - removeformat
+                - anchor
+                - h4
+              toolbar_mode: floating
+              remove_empty_nodes: true
+              link_collections:
+                - pages
+              container: assets
+              type: bard
+              display: Betrieb
+              localizable: false
+          -
+            handle: links
+            field:
+              buttons:
+                - bold
+                - removeformat
+                - anchor
+                - h4
+              toolbar_mode: floating
+              remove_empty_nodes: true
+              link_collections:
+                - pages
+              container: assets
+              type: bard
+              display: Links
+              localizable: false

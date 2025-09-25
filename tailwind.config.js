@@ -23,20 +23,36 @@ export default {
       },
 
       maxWidth: {
-        'outer-container': '112.5rem', // 1400px
+        'outer-container': '80rem', // 1280px
+        'inner-container': '66.875rem', // 1070px
       },
       
       colors: {
+        'navy': '#002D55', // Dunkelblau
+        'azure': '#0096CD', // Blau
+        'sky': '#E6F5FF', // Hellblau
+        'scarlet': '#E6000F', // Rot
+        'lemon': '#7DB919', // Gelb
       },
 
       fontFamily: {
+        'gibson': ['canada-type-gibson', ...defaultTheme.fontFamily.sans],
       },
 
       fontSize: {
-        'xs': ['1rem', { lineHeight: '1.3125' }],      // 16/21  
-        'sm': ['1.125rem', { lineHeight: '1.333' }],   // 18/24
-        'md': ['1.25rem', { lineHeight: '1.3' }],      // 20/26
-        'lg': ['1.5rem', { lineHeight: '1.25' }],      // 24/30
+        'xxs':   '0.875rem',   // 14px
+        'xs':   '1rem',        // 16px
+        'sm':   '1.125rem',    // 18px
+        'md':   '1.25rem',     // 20px
+        'lg':   '1.5rem',      // 24px
+        'xl':   '1.875rem',    // 30px
+        '2xl':  '3.125rem',    // 50px
+        '3xl':  '4.375rem',    // 70px
+        '4xl':  '5.625rem',    // 90px
+      },
+
+      borderWidth: {
+        '3': '3px',
       },
       
       zIndex: {

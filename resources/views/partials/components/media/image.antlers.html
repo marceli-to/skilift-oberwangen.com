@@ -15,11 +15,7 @@
     <source srcset="{{ glide:image preset="{{ preset ? 'md-{{ preset }}-webp' : 'md-webp' }}" }}" />
     <img 
       src="{{ glide:image preset="{{ preset ? 'md-{{ preset }}' : 'md' }}" }}" 
-      {{ if site:short_locale == "de" }}
-        alt="{{ image:alt_de }}"
-      {{ elseif site:short_locale == "en" }}
-        alt="{{ image:alt_en }}"
-      {{ /if }}
+      alt="{{ image:alt }}"
       height="{{ image:height }}" 
       width="{{ image:width }}"
       class="block {{ class ?? '' }}"

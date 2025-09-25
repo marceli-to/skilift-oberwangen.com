@@ -3,6 +3,4 @@ tabs:
     display: Main
     sections:
       -
-        fields:
-          -
-            import: border
+        fields: []
