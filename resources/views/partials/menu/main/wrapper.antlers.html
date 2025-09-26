@@ -1,5 +1,5 @@
 <div 
-  class="absolute right-20 lg:right-40 top-0 z-90 bg-red-100"
+  class="absolute right-0 lg:right-40 -top-50 z-90 bg-azure pr-20 py-40 pl-40"
   x-cloak 
   x-show="menu"
   x-transition:enter="transition ease-out duration-100"
@@ -9,7 +9,13 @@
   x-transition:leave-start="opacity-100"
   x-transition:leave-end="opacity-0">
   
-    <ul class="leading-none">
+  <span class="flex justify-end mb-20">
+    {{ partial:menu/main/buttons/hide class="text-white h-28 w-auto" }}
+  </span>
+
+  <nav>
+
+    <ul class="leading-none flex flex-col gap-y-10 [&_a]:font-bold [&_a]:uppercase [&_a]:text-white [&_a]:text-md">
       {{ nav:main }}
         {{ partial:menu/main/item }}
       {{ /nav:main }}
