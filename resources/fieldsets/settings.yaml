@@ -4,22 +4,33 @@ fields:
     handle: page_class
     field:
       options:
-        page-privacy: Datenschutz
-        page-imprint: Impressum
+        -
+          key: is-homepage
+          value: Startseite
+        -
+          key: is-privacy
+          value: Datenschutz
+        -
+          key: is-imprint
+          value: Impressum
       type: select
       display: 'Seiten CSS-Klasse'
+      localizable: false
   -
     handle: debug
     field:
       type: toggle
       display: Debug
+      localizable: false
   -
     handle: template
     field:
       type: template
       display: Template
+      localizable: false
   -
     handle: layout
     field:
       type: template
       display: Layout
+      localizable: false

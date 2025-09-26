@@ -1,8 +1,16 @@
-<section class="w-full py-25 lg:py-50 {{ theme_color }}">
+<section class="w-full pt-20 pb-30 lg:pt-50 lg:pb-60 {{ theme_color }}">
   {{ elements }}
 
     {{ if type == 'element_text' }}
       {{ partial:components/text }}
+    {{ /if }}
+
+    {{ if type == 'element_text_image' }}
+      {{ partial:components/text_image }}
+    {{ /if }}
+
+    {{ if type == 'teasers' }}
+     {{ partial:components/teaser/wrapper }}
     {{ /if }}
 
     {{ if type == 'sponsors' }}

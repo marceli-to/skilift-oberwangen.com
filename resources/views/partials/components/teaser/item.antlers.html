@@ -1,0 +1,18 @@
+<div>
+  {{ if image }}
+    {{ partial:components/media/image 
+      preset="teaser" 
+      :sizes="['md', 'lg']"
+      class="aspect-[4/3] w-full h-full object-cover" }}
+      <div class="h-10 lg:h-17 w-full bg-pattern" aria-hidden="true">
+      </div>
+  {{ /if }}
+  {{ if title }}
+    {{ partial:components/headings/h2 class="!mt-10 lg:!mt-15 mb-5 lg:mb-10" }}
+      {{ title }}
+    {{ /partial:components/headings/h2 }}
+  {{ /if }}
+  {{ if editor }}
+    {{ partial:components/editor }}
+  {{ /if }}
+</div>

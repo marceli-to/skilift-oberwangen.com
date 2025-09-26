@@ -1,11 +1,41 @@
-{{ editor }}
-  <article class="max-w-prose [&_h2]:text-navy [&_h2]:text-md md:[&_h2]:text-lg [&_h2]:mb-5 md:[&_h2]:mb-10">
-    {{ if type == 'text' }}
-      {{ text }}
-    {{ /if }}
+{{ if is_homepage }}
 
-    {{ if type == 'link' }}
-      {{ partial:components/button wrapperClass="my-15 md:my-30" url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
-    {{ /if }}
-  </article>
-{{ /editor }}
+  {{# {{ partial:layout/container/inner class="grid grid-cols-12 gap-30 mt-30 lg:mt-50" }}
+
+    {{ editor }}
+      <article class="col-span-full lg:col-span-8 max-w-prose [&_h2]:text-white [&_h2]:text-md md:[&_h2]:text-lg [&_h2]:mb-5 md:[&_h2]:mb-10">
+
+        {{ if type == 'text' }}
+          {{ text }}
+        {{ /if }}
+
+        {{ if type == 'link' }}
+          {{ partial:components/button wrapperClass="my-15 md:my-30" url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
+        {{ /if }}
+
+      </article>
+    {{ /editor }}
+
+    <aside class="lg:col-span-4">
+      <iframe width='300' height='365' name='FC3' style='border:1px solid;border-color:transparent;' src='https://api.wetteronline.de/wetterwidget?gid=06631&modeid=FC3&seourl=oberwangen&locationname=Oberwangen&lang=de'></iframe>
+    </aside>
+
+  {{ /partial:layout/container/inner }} #}}
+
+{{ else }}
+
+  {{ editor }}
+    <article class="max-w-prose [&_h2]:text-navy [&_h2]:text-md md:[&_h2]:text-lg [&_h2]:mb-5 md:[&_h2]:mb-10">
+
+      {{ if type == 'text' }}
+        {{ text }}
+      {{ /if }}
+
+      {{ if type == 'link' }}
+        {{ partial:components/button wrapperClass="my-15 md:my-30" url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
+      {{ /if }}
+
+    </article>
+  {{ /editor }}
+
+{{ /if }}
