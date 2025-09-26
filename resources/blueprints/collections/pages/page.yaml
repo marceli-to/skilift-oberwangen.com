@@ -15,7 +15,7 @@ tabs:
               validate:
                 - required
           -
-            handle: page_elements
+            handle: blocks
             field:
               type: replicator
               display: Inhaltselemente
@@ -26,6 +26,13 @@ tabs:
                   display: Hauptelemente
                   icon: addon-boxes-stack
                   sets:
+                    section:
+                      display: Sektion
+                      instructions: 'Sektion hinzufügen'
+                      icon: layout-split-horizontal
+                      fields:
+                        -
+                          import: section
                     editor:
                       display: Texteditor
                       instructions: 'Texteditor hinzufügen'

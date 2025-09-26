@@ -1,0 +1,11 @@
+{{ partial:layout/container/inner }}
+
+  {{ if title }}
+    {{ partial:components/headings/h1 }}
+      {{ title | nl2br }}
+    {{ /partial:components/headings/h1 }}
+  {{ /if }}
+
+  {{ partial:components/editor }}
+
+{{ /partial:layout/container/inner }}

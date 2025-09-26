@@ -1,0 +1,8 @@
+title: 'Text / Bild'
+fields:
+  -
+    import: multiline_title
+  -
+    import: editor
+  -
+    import: single_image

@@ -1,0 +1,8 @@
+title: Titel
+fields:
+  -
+    handle: title
+    field:
+      type: textarea
+      display: Titel
+      localizable: false

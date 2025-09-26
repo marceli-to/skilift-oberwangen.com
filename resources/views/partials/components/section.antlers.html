@@ -1,0 +1,13 @@
+<section class="w-full py-25 lg:py-50 {{ theme_color }}">
+  {{ elements }}
+
+    {{ if type == 'element_text' }}
+      {{ partial:components/text }}
+    {{ /if }}
+
+    {{ if type == 'sponsors' }}
+      {{ partial:components/sponsors }}
+    {{ /if }}
+
+  {{ /elements }}
+</section>

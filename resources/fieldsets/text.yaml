@@ -1,0 +1,6 @@
+title: Text
+fields:
+  -
+    import: multiline_title
+  -
+    import: editor

@@ -18,7 +18,7 @@ main {
 }
 
 .bg-pattern {
-  @apply bg-[repeating-linear-gradient(-45deg,_#38bdf8_0px,_#38bdf8_8px,_#ffffff_8px,_#ffffff_11px)]
+  @apply bg-[repeating-linear-gradient(-45deg,_#0096CD_0px,_#0096CD_6px,_#ffffff_6px,_#ffffff_8px)]
 }
 
 p:not(:last-child) {
@@ -33,4 +33,9 @@ h2,
 h3,
 h4 {
   @apply font-bold uppercase;
+}
+
+/* Containers */
+.max-w-inner-container + .max-w-inner-container {
+  @apply mt-30 lg:mt-60;
 }

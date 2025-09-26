@@ -12,6 +12,12 @@ export default {
   ],
 
   safelist: [
+    'bg-white',
+    'bg-navy',
+    'bg-azure',
+    'bg-sky',
+    'bg-scarlet',
+    'bg-lemon',
   ],
 
   theme: {
@@ -25,6 +31,7 @@ export default {
       maxWidth: {
         'outer-container': '80rem', // 1280px
         'inner-container': '66.875rem', // 1070px
+        'prose': '75ch', // 1070px
       },
       
       colors: {

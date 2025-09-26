@@ -4,18 +4,12 @@ tabs:
     display: Main
     sections:
       -
+        display: Alt-Text
+        instructions: 'Beschreibung des Bildes'
         fields:
           -
-            handle: alt_de
+            handle: alt
             field:
               type: text
               display: Alt-Text
               localizable: false
-              instructions: 'Beschreibung des Bildes, Deutsch'
-          -
-            handle: alt_en
-            field:
-              type: text
-              display: Alt-Text
-              localizable: false
-              instructions: 'Beschreibung des Bildes, Englisch'

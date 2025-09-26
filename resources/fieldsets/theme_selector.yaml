@@ -1,0 +1,16 @@
+title: Theme
+fields:
+  -
+    handle: theme_color
+    field:
+      options:
+        -
+          key: bg-white
+          value: Weiss
+        -
+          key: bg-sky
+          value: Hellblau
+      default: bg-white
+      type: select
+      display: Theme
+      localizable: false

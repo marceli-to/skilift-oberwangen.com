@@ -1,0 +1,35 @@
+title: Sponsoren
+fields:
+  -
+    handle: sponsors
+    field:
+      type: replicator
+      display: Sponsoren
+      localizable: false
+      collapse: true
+      sets:
+        sponsor:
+          display: Sponsor
+          instructions: 'Sponsor hinzufügen'
+          icon: media-image-picture-orientation
+          sets:
+            sponsor:
+              display: Sponsor
+              instructions: 'Sponsor hinzufügen'
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  handle: logo
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Logo
+                    localizable: false
+                    folder: sponsoren
+                -
+                  handle: link
+                  field:
+                    type: link
+                    display: Link
+                    localizable: false

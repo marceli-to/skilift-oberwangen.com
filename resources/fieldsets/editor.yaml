@@ -27,6 +27,39 @@ fields:
           display: Elemente
           icon: addon-boxes-stack
           sets:
-            neues_set:
-              display: 'Neues Set'
-              fields: {  }
+            link:
+              display: 'Button / Link'
+              instructions: 'Button / Link hinzufügen'
+              icon: link
+              fields:
+                -
+                  handle: link
+                  field:
+                    collections:
+                      - pages
+                    container: assets
+                    type: link
+                    display: Link
+                    localizable: false
+                -
+                  handle: link_text
+                  field:
+                    type: text
+                    display: Linktext
+                    localizable: false
+                    width: 50
+                -
+                  handle: target
+                  field:
+                    options:
+                      -
+                        key: _blank
+                        value: 'Neues Fenster'
+                      -
+                        key: _self
+                        value: 'Gleiches Fenster'
+                    type: select
+                    display: 'Öffnen in'
+                    localizable: false
+                    default: _blank
+                    width: 50

@@ -1,5 +1,11 @@
 {{ editor }}
-  {{ if type == 'text' }}
-    {{ text }}
-  {{ /if }}
+  <article class="max-w-prose [&_h2]:text-navy [&_h2]:text-md md:[&_h2]:text-lg [&_h2]:mb-5 md:[&_h2]:mb-10">
+    {{ if type == 'text' }}
+      {{ text }}
+    {{ /if }}
+
+    {{ if type == 'link' }}
+      {{ partial:components/button wrapperClass="my-15 md:my-30" url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
+    {{ /if }}
+  </article>
 {{ /editor }}

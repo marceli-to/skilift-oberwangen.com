@@ -1,0 +1,34 @@
+title: Teaser
+fields:
+  -
+    handle: teasers
+    field:
+      type: replicator
+      display: Teaser
+      localizable: false
+      sets:
+        teasers:
+          display: Teaser
+          icon: text-formatting-image-top
+          sets:
+            teaser:
+              display: Teaser
+              instructions: 'Teaser hinzufügen'
+              icon: text-formatting-image-top
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Bild
+                    localizable: false
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Titel
+                    localizable: false
+                -
+                  import: editor

@@ -1,0 +1,48 @@
+title: Sektion
+fields:
+  -
+    import: theme_selector
+  -
+    handle: elements
+    field:
+      type: replicator
+      display: Sektionselemente
+      localizable: false
+      collapse: true
+      sets:
+        main_elements:
+          display: Hauptelemente
+          icon: addon-boxes-stack
+          sets:
+            element_text:
+              display: Text
+              instructions: 'Textelement hinzufügen'
+              icon: text-formatting-markdown
+              fields:
+                -
+                  import: text
+            element_text_image:
+              display: 'Text / Bild'
+              instructions: 'Text / Bild Element hinzufügen'
+              icon: text-formatting-wrap-image-right
+              fields:
+                -
+                  import: text_image
+            teasers:
+              display: Teaser
+              instructions: 'Teaser hinzufügen'
+              icon: text-formatting-image-top
+              fields:
+                -
+                  import: teasers
+        special_elements:
+          display: Spezialelemente
+          icon: addon-boxes-stack
+          sets:
+            sponsors:
+              display: Sponsoren
+              instructions: 'Sponsoren hinzufügen'
+              icon: media-image-picture-gallery
+              fields:
+                -
+                  import: sponsors
