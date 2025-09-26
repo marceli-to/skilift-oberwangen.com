@@ -3,7 +3,7 @@
   <div class="w-full absolute text-white z-50 top-45 md:top-80 lg:top-120">
     {{ partial:layout/container/outer }}
       
-      <span class="text-tiny xs:text-xxs lg:text-sm leading-none absolute xs:-top-2">
+      <span class="text-tiny xs:text-xxs md:text-xs leading-none absolute xs:-top-2 md:-top-4 lg:top-0">
         Seit 1973 am Bügeln
       </span>
       
@@ -11,11 +11,11 @@
         href="/" 
         aria-label="Startseite" 
         class="block group">
-        {{ partial:icons/logo class="h-auto max-w-100 md:max-w-160 lg:max-w-none absolute -top-32 md:-top-66 lg:-top-80 left-1/2 -translate-x-1/2" }}
+        {{ partial:icons/logo class="absolute -top-32 md:-top-66 lg:-top-72 left-1/2 -translate-x-1/2" }}
       </a>
 
-      <span class="absolute right-20 lg:right-40 -top-8 lg:-top-8">
-        {{ partial:menu/main/buttons/show class="text-white h-24 lg:h-28 w-auto" }}
+      <span class="absolute right-20 lg:right-40 -top-4 md:-top-6 lg:top-0">
+        {{ partial:menu/main/buttons/show class="text-white w-26 md:w-28 h-auto" }}
       </span>
 
     {{ partial:menu/main/wrapper }}

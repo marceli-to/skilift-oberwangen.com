@@ -4,9 +4,9 @@
       <a href="/" 
         aria-label="Startseite" 
         class="block group">
-        {{ partial:icons/logo class="h-auto max-w-100 md:max-w-160 lg:max-w-none" }}
+        {{ partial:icons/logo }}
       </a>
-      <div class="w-full flex flex-col gap-y-30 md:grid md:grid-cols-8 lg:gap-y-0 md:gap-x-30 text-xxs [&_a]:no-underline [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a:hover]:underline [&_h4]:text-xs [&_h4]:mb-16">
+      <div class="w-full flex flex-col gap-y-30 md:grid md:grid-cols-8 lg:gap-y-0 md:gap-x-30 text-xs [&_a]:no-underline [&_a]:decoration-1 [&_a]:underline-offset-4 [&_a:hover]:underline [&_h4]:text-sm [&_h4]:mb-16">
         {{ if footer:contact }}
           <div class="border-t-3 border-white pt-16 md:col-span-4 lg:col-span-2">
             {{ footer:contact }}

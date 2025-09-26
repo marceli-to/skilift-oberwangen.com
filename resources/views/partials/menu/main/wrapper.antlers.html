@@ -1,5 +1,5 @@
 <div 
-  class="absolute right-0 lg:right-40 -top-50 z-90 bg-azure pr-20 py-40 pl-40"
+  class="absolute right-0 lg:right-20 -top-50 md:-top-30 z-90 bg-azure pr-20 pt-40 md:pt-20 pb-40 w-1/2 md:w-1/3 lg:max-w-[240px] shadow-[-4px_4px_12px_0px_rgba(0,0,0,0.4)]"
   x-cloak 
   x-show="menu"
   x-transition:enter="transition ease-out duration-100"
@@ -9,13 +9,13 @@
   x-transition:leave-start="opacity-100"
   x-transition:leave-end="opacity-0">
   
-  <span class="flex justify-end mb-20">
-    {{ partial:menu/main/buttons/hide class="text-white h-28 w-auto" }}
+  <span class="flex justify-end mb-30 relative top-5 md:top-4 lg:top-7 right-3">
+    {{ partial:menu/main/buttons/hide class="text-white w-20 md:w-24 h-auto" }}
   </span>
 
   <nav>
 
-    <ul class="leading-none flex flex-col gap-y-10 [&_a]:font-bold [&_a]:uppercase [&_a]:text-white [&_a]:text-md">
+    <ul class="leading-none flex flex-col gap-y-20 [&_a]:font-bold [&_a]:uppercase [&_a]:text-white [&_a]:text-sm md:[&_a]:text-md">
       {{ nav:main }}
         {{ partial:menu/main/item }}
       {{ /nav:main }}
