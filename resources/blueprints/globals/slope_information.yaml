@@ -1,0 +1,45 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: last_update
+            field:
+              time_enabled: true
+              type: date
+              display: 'Letztes Update'
+              localizable: false
+          -
+            handle: skilift_state
+            field:
+              default: true
+              type: toggle
+              display: Skilift
+              localizable: false
+              width: 50
+          -
+            handle: ponylift_state
+            field:
+              default: true
+              type: toggle
+              display: Ponylift
+              localizable: false
+              width: 50
+          -
+            handle: magiccarpet_state
+            field:
+              default: true
+              type: toggle
+              display: Zauberteppich
+              localizable: false
+              width: 50
+          -
+            handle: arosastuebli_state
+            field:
+              default: true
+              type: toggle
+              display: 'Arosa Stübli'
+              localizable: false
+              width: 50

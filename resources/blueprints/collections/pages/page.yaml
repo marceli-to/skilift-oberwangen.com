@@ -40,6 +40,16 @@ tabs:
                       fields:
                         -
                           import: editor
+                special_elements:
+                  display: Spezialelemente
+                  icon: addon-boxes-stack
+                  sets:
+                    intro_home:
+                      display: 'Intro Startseite'
+                      icon: text-formatting-markdown
+                      fields:
+                        -
+                          import: editor
   header:
     display: Header
     sections:

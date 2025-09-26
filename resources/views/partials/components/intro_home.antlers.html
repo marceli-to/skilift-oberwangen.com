@@ -1,0 +1,48 @@
+{{ partial:layout/container/inner class="grid grid-cols-12 gap-30 mt-30 lg:mt-50 pb-50" }}
+
+  {{ editor }}
+    <article class="col-span-full lg:col-span-8 max-w-prose text-white [&_h2]:text-white [&_h2]:text-md md:[&_h2]:text-lg [&_h2]:mb-5 md:[&_h2]:mb-10">
+
+      {{ if type == 'text' }}
+        {{ text }}
+      {{ /if }}
+
+      {{ if type == 'link' }}
+        {{ partial:components/button wrapperClass="my-15 md:my-30" url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
+      {{ /if }}
+
+    </article>
+  {{ /editor }}
+
+  <aside class="lg:col-span-4">
+
+    <div class="bg-azure text-white p-10 lg:p-20 mb-20">
+      <div class="text-xs lg:text-sm inline-block w-auto">
+        Update: {{ slope_information:last_update iso_format="D.MM.YYYY, H.mm" }} Uhr
+        <span class="bg-white block w-full h-4 mt-4"></span>
+      </div>
+      <h2 class="text-xs lg:text-lg my-10">Pisteninfo</h2>
+      <div class="font-bold text-md lg:text-md flex flex-col gap-5">
+        <div class="flex items-center gap-10">
+          <span class="rounded-full w-14 h-14 {{ slope_information:skilift_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
+          <span class="uppercase">Skilift</span>
+        </div>
+        <div class="flex items-center gap-10">
+          <span class="rounded-full w-14 h-14 {{ slope_information:ponylift_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
+          <span class="uppercase">Ponylift</span>
+        </div>
+        <div class="flex items-center gap-10">
+          <span class="rounded-full w-14 h-14 {{ slope_information:magiccarpet_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
+          <span class="uppercase">Zauberteppich</span>
+        </div>
+        <div class="flex items-center gap-10">
+          <span class="rounded-full w-14 h-14 {{ slope_information:arosastuebli_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
+          <span class="uppercase">Arosa Stübli</span>
+        </div>
+      </div>
+    </div>
+    <iframe width='300' height='365' name='FC3' class="w-full h-auto aspect-[300/300]" src='https://api.wetteronline.de/wetterwidget?gid=06631&modeid=FC3&seourl=oberwangen&locationname=Oberwangen&lang=de'></iframe>
+    {{# <iframe width='300' height='365' name='FC3' style='border:1px solid;border-color:transparent;' src='https://api.wetteronline.de/wetterwidget?gid=06631&modeid=FC3&seourl=oberwangen&locationname=Oberwangen&lang=de'></iframe> #}}
+  </aside>
+
+{{ /partial:layout/container/inner }}
