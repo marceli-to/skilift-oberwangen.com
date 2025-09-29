@@ -1,0 +1,24 @@
+title: Hero
+fields:
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Bild
+      localizable: false
+  -
+    handle: title
+    field:
+      type: textarea
+      display: Titel
+      localizable: false
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitel
+      localizable: false
+  -
+    import: editor

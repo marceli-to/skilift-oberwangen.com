@@ -1,0 +1,25 @@
+{{ partial:layout/container/inner }}
+  <div class="relative">
+    {{ partial:components/media/image
+      :image="image"
+      preset="hero"
+      :sizes="['2xl', 'xl', 'lg']"
+      eager="false"
+      wrapperClass="w-full"
+      class="w-full h-auto aspect-[16/9] lg:aspect-[16/8] object-cover" }}
+      <span class="absolute inset-0 w-full h-full bg-black/15"></span>
+      {{ partial:components/headings/h2 class="absolute bottom-15 xl:bottom-40 left-15 xl:left-115 text-2xl lg:text-3xl xl:text-4xl text-white leading-[0.95]" }}
+        {{ title | nl2br }}
+      {{ /partial:components/headings/h2 }}
+    
+  </div>
+
+  <div class="pt-15 xl:pl-115 lg:pt-25">
+    {{ if subtitle }}
+      {{ partial:components/headings/h3 class="uppercase text-lg lg:text-xl xl:text-2xl mb-10 lg:mb-15 max-w-xl leading-[1.1] text-pretty" }}
+        {{ subtitle }}
+      {{ /partial:components/headings/h3 }}
+    {{ /if }}
+    {{ partial:components/editor }}
+  </div>
+{{ /partial:layout/container/inner }}

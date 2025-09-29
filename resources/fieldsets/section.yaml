@@ -42,6 +42,13 @@ fields:
               fields:
                 -
                   import: map
+            hero:
+              display: Hero
+              instructions: 'Hero (Text / Bild Teaser) hinzufügen'
+              icon: text-formatting-image-top
+              fields:
+                -
+                  import: hero
         special_elements:
           display: Spezialelemente
           icon: addon-boxes-stack

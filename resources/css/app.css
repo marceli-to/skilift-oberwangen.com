@@ -62,6 +62,12 @@ h2:not(:first-of-type) {
   @apply mt-30 lg:mt-60;
 }
 
+/* Sections */
+section.bg-white + section.bg-white,
+section.bg-sky + section.bg-sky {
+  @apply !pt-0; /* Remove top padding if section has identical background */
+}
+
 /* Patterns */
 .bg-pattern {
   @apply bg-[repeating-linear-gradient(-45deg,_#0096CD_0px,_#0096CD_6px,_#ffffff_6px,_#ffffff_8px)]
