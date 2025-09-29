@@ -63,10 +63,10 @@ h2:not(:first-of-type) {
 }
 
 /* Sections */
-/* section.bg-white + section.bg-white,
+section.bg-white + section.bg-white,
 section.bg-sky + section.bg-sky {
-  @apply !pt-0;
-} */
+  @apply !pt-10 lg:!pt-20;
+}
 
 /* Patterns */
 .bg-pattern {
