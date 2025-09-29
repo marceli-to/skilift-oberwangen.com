@@ -1,0 +1,36 @@
+title: Spezialteaser
+fields:
+  -
+    handle: teaser
+    field:
+      collapse: true
+      type: replicator
+      display: Teaser
+      localizable: false
+      sets:
+        teaser:
+          display: Teaser
+          instructions: 'Teaser hinzufügen'
+          icon: text-formatting-wrap-image-right
+          sets:
+            teaser:
+              display: Teaser
+              instructions: 'Teaser hinzufügen'
+              icon: text-formatting-wrap-image-right
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Bild
+                    localizable: false
+                -
+                  handle: title
+                  field:
+                    type: textarea
+                    display: Titel
+                    localizable: false
+                -
+                  import: editor

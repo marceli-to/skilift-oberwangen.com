@@ -44,6 +44,13 @@ tabs:
                   display: Spezialelemente
                   icon: addon-boxes-stack
                   sets:
+                    special_teaser:
+                      display: Spezialteaser
+                      instructions: 'Spezialteaser hinzufügen'
+                      icon: text-formatting-wrap-image-right
+                      fields:
+                        -
+                          import: special_teaser
                     intro_home:
                       display: 'Intro Startseite'
                       icon: text-formatting-markdown
