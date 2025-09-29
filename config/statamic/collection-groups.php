@@ -15,8 +15,8 @@
  * ]
  */
 return [
-  'Anmeldungen' => [
-    // 'Veranstaltungen' => 'event_registrations',
-    // 'Kontaktformular' => 'contact_form',
-  ],
+  // 'Anmeldungen' => [
+  //   // 'Veranstaltungen' => 'event_registrations',
+  //   // 'Kontaktformular' => 'contact_form',
+  // ],
 ];
