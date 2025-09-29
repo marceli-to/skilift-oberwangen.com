@@ -1,4 +1,5 @@
 @import "typo/webfonts.css";
+@import "mapbox.css";
 
 @tailwind base;
 @tailwind components;
@@ -38,7 +39,7 @@ h1,
 h2,
 h3,
 h4 {
-  @apply font-bold;
+  @apply font-bold text-pretty;
 }
 
 h1,
@@ -64,4 +65,9 @@ h2:not(:first-of-type) {
 /* Patterns */
 .bg-pattern {
   @apply bg-[repeating-linear-gradient(-45deg,_#0096CD_0px,_#0096CD_6px,_#ffffff_6px,_#ffffff_8px)]
+}
+
+/* Map marker */
+.marker {
+  @apply cursor-pointer h-50 w-40 bg-[url('../icons/marker.svg')] bg-contain bg-no-repeat
 }

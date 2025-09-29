@@ -1,0 +1,7 @@
+{{ partial:layout/container/inner }}
+  <div id="map" class="w-full aspect-[16/8] lg:aspect-[16/7] mb-20 lg:mb-30"></div>
+  {{ partial:components/headings/h2 class="text-md lg:text-xl leading-[1.1] mb-5 lg:mb-10" }}
+    {{ map:title | nl2br }}
+  {{ /partial:components/headings/h2 }}
+  {{ partial:components/editor :editor="map:editor" }}
+{{ /partial:layout/container/inner }}

@@ -31,7 +31,11 @@ export default {
       maxWidth: {
         'outer-container': '80rem', // 1280px
         'inner-container': '66.875rem', // 1070px
-        'prose': '75ch', // 1070px
+        'prose': '75ch', // 75 characters
+      },
+
+      gridTemplateColumns: {
+        '16': 'repeat(16, minmax(0, 1fr))',
       },
       
       colors: {

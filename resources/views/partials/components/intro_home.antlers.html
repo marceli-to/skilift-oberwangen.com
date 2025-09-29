@@ -1,48 +1,29 @@
-{{ partial:layout/container/inner class="grid grid-cols-12 gap-30 mt-30 lg:mt-50 pb-50" }}
+{{ partial:layout/container/inner class="grid grid-cols-16 gap-30 mt-30 lg:mt-50 pb-50" }}
+  <div class="col-span-full md:col-span-8 lg:col-span-11">
+    <article class="max-w-prose text-white [&_h2]:text-white [&_h2]:text-md md:[&_h2]:text-lg [&_h2]:mb-5 md:[&_h2]:mb-10">
+      {{ editor }}
 
-  {{ editor }}
-    <article class="col-span-full lg:col-span-8 max-w-prose text-white [&_h2]:text-white [&_h2]:text-md md:[&_h2]:text-lg [&_h2]:mb-5 md:[&_h2]:mb-10">
+        {{ if type == 'text' }}
+          {{ text }}
+        {{ /if }}
 
-      {{ if type == 'text' }}
-        {{ text }}
-      {{ /if }}
+        {{ if type == 'link' }}
+          {{ partial:components/button wrapperClass="my-15 md:my-30" url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
+        {{ /if }}
 
-      {{ if type == 'link' }}
-        {{ partial:components/button wrapperClass="my-15 md:my-30" url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
-      {{ /if }}
-
+      {{ /editor }}
     </article>
-  {{ /editor }}
+  </div>
+  <div class="col-span-full md:col-span-4 lg:col-span-5 md:mt-13">
+    <aside class="sm:flex sm:gap-x-20 md:gap-x-0 md:block">
 
-  <aside class="lg:col-span-4">
-
-    <div class="bg-azure text-white p-10 lg:p-20 mb-20">
-      <div class="text-xs lg:text-sm inline-block w-auto">
-        Update: {{ slope_information:last_update iso_format="D.MM.YYYY, H.mm" }} Uhr
-        <span class="bg-white block w-full h-4 mt-4"></span>
+      <div class="max-w-xs">
+        {{ partial:components/info }}
       </div>
-      <h2 class="text-xs lg:text-lg my-10">Pisteninfo</h2>
-      <div class="font-bold text-md lg:text-md flex flex-col gap-5">
-        <div class="flex items-center gap-10">
-          <span class="rounded-full w-14 h-14 {{ slope_information:skilift_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
-          <span class="uppercase">Skilift</span>
-        </div>
-        <div class="flex items-center gap-10">
-          <span class="rounded-full w-14 h-14 {{ slope_information:ponylift_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
-          <span class="uppercase">Ponylift</span>
-        </div>
-        <div class="flex items-center gap-10">
-          <span class="rounded-full w-14 h-14 {{ slope_information:magiccarpet_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
-          <span class="uppercase">Zauberteppich</span>
-        </div>
-        <div class="flex items-center gap-10">
-          <span class="rounded-full w-14 h-14 {{ slope_information:arosastuebli_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
-          <span class="uppercase">Arosa Stübli</span>
-        </div>
+      <div class="max-w-xs">
+        {{ partial:components/weather }}
       </div>
-    </div>
-    <iframe width='300' height='365' name='FC3' class="w-full h-auto aspect-[300/300]" src='https://api.wetteronline.de/wetterwidget?gid=06631&modeid=FC3&seourl=oberwangen&locationname=Oberwangen&lang=de'></iframe>
-    {{# <iframe width='300' height='365' name='FC3' style='border:1px solid;border-color:transparent;' src='https://api.wetteronline.de/wetterwidget?gid=06631&modeid=FC3&seourl=oberwangen&locationname=Oberwangen&lang=de'></iframe> #}}
-  </aside>
 
+    </aside>
+  </div>
 {{ /partial:layout/container/inner }}

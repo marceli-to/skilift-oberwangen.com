@@ -6,6 +6,7 @@ fields:
       type: replicator
       display: Teaser
       localizable: false
+      collapse: true
       sets:
         teasers:
           display: Teaser

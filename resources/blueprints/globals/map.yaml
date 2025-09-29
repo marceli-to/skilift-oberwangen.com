@@ -1,0 +1,14 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: textarea
+              display: Titel
+              localizable: false
+          -
+            import: editor

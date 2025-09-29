@@ -1,0 +1,25 @@
+<div class="bg-azure text-white p-15 lg:p-20 mb-20">
+  <div class="text-xs lg:text-sm inline-block w-auto">
+    Update: {{ slope_information:last_update iso_format="D.MM.YYYY, H.mm" }} Uhr
+    <span class="bg-white block w-full h-3 mt-6"></span>
+  </div>
+  <h2 class="text-sm lg:text-lg my-10 lg:my-15">Pisteninfo</h2>
+  <div class="font-bold text-xs lg:text-sm flex flex-col gap-5">
+    <div class="flex items-center gap-10">
+      <span class="rounded-full w-12 h-12 {{ slope_information:skilift_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
+      <span class="uppercase">Skilift</span>
+    </div>
+    <div class="flex items-center gap-10">
+      <span class="rounded-full w-12 h-12 {{ slope_information:ponylift_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
+      <span class="uppercase">Ponylift</span>
+    </div>
+    <div class="flex items-center gap-10">
+      <span class="rounded-full w-12 h-12 {{ slope_information:magiccarpet_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
+      <span class="uppercase">Zauberteppich</span>
+    </div>
+    <div class="flex items-center gap-10">
+      <span class="rounded-full w-12 h-12 {{ slope_information:arosastuebli_state == 'open' ? 'bg-green-500' : 'bg-red-500' }} mt-2"></span>
+      <span class="uppercase">Arosa Stübli</span>
+    </div>
+  </div>
+</div>

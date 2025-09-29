@@ -35,6 +35,13 @@ fields:
               fields:
                 -
                   import: teasers
+            map:
+              display: Karte
+              instructions: 'Karte hinzufügen'
+              icon: travel-map
+              fields:
+                -
+                  import: map
         special_elements:
           display: Spezialelemente
           icon: addon-boxes-stack
@@ -46,3 +53,8 @@ fields:
               fields:
                 -
                   import: sponsors
+            contact_form:
+              display: Kontakformular
+              instructions: 'Kontaktformular hinzufügen'
+              icon: form-text-field
+              fields: {  }
