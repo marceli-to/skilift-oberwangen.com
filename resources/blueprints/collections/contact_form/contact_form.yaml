@@ -1,0 +1,104 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: date_submission
+            field:
+              type: date
+              display: Datum
+              localizable: false
+              visibility: read_only
+          -
+            handle: firstname
+            field:
+              type: text
+              display: Vorname
+              localizable: false
+              validate:
+                - required
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              localizable: false
+              validate:
+                - required
+          -
+            handle: street
+            field:
+              type: text
+              display: 'Strasse, Nr.'
+              localizable: false
+              validate:
+                - required
+          -
+            handle: location
+            field:
+              type: text
+              display: 'PLZ / Ort'
+              localizable: false
+              validate:
+                - required
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+              localizable: false
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              type: text
+              display: E-Mail
+              localizable: false
+              validate:
+                - required
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Mitteilung
+              localizable: false
+          -
+            handle: privacy
+            field:
+              type: toggle
+              display: Datenschutzerklärung
+              localizable: false
+              visibility: read_only
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+              display: Titel
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - contact_form
+              max_items: 1
+              listable: false
+              localizable: true
+title: Kontaktformular

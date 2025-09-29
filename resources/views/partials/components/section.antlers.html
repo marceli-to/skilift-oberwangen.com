@@ -21,6 +21,10 @@
       {{ partial:components/map }}
     {{ /if }}
 
+    {{ if type == 'contact_form' }}
+      {{ partial:components/forms/contact }}
+    {{ /if }}
+
 
   {{ /elements }}
 </section>

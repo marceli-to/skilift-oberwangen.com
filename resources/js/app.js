@@ -4,3 +4,4 @@ Alpine.start();
 
 import './bootstrap';
 import './modules/maps.js';
+import './forms/contact/app.js';

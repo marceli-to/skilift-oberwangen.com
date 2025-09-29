@@ -71,3 +71,29 @@ h2:not(:first-of-type) {
 .marker {
   @apply cursor-pointer h-50 w-40 bg-[url('../icons/marker.svg')] bg-contain bg-no-repeat
 }
+
+/* Form elements */
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=number],
+textarea {
+  @apply block bg-white text-navy w-full border-none py-10 px-15 lg:py-15 lg:px-20 placeholder:block placeholder:text-navy placeholder:mt-5 placeholder:!leading-none !outline-none !ring-0
+
+}
+
+input[type=checkbox] {
+  @apply !w-18 !h-18 bg-white accent-navy appearance-none border-none checked:bg-white relative;
+}
+
+input[type=checkbox]:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3'%3E%3Cpath d='M20 6L9 17L4 12'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+
+textarea {
+  field-sizing: content;
+  @apply min-h-[125px] text-navy placeholder:text-navy
+}
