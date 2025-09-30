@@ -20,7 +20,7 @@ main {
 
 p:not(:last-child),
 ul:not(:last-child) {
-  @apply mb-10 lg:mb-20
+  @apply mb-15 lg:mb-25
 }
 
 p:has(+ ul) {

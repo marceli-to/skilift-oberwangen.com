@@ -1,0 +1,18 @@
+<article class="max-w-prose {{ class ? class : '[&_h2]:text-navy [&_h2]:text-md md:[&_h2]:text-lg [&_h2]:mb-5 md:[&_h2]:mb-10' }}">
+  {{ editor }}
+
+    {{ if type == 'text' }}
+      {{ text }}
+    {{ /if }}
+
+    {{ if type == 'link' }}
+      {{ partial:components/editor/button wrapperClass="my-15 md:my-30" url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
+    {{ /if }}
+
+    {{ if type == 'information' }}
+      {{ partial:components/editor/info }}
+    {{ /if }}
+    
+  {{ /editor }}
+
+</article>

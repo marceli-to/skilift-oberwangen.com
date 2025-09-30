@@ -1,26 +1,24 @@
-{{ partial:layout/container/inner class="!mt-0 mb-30 lg:mb-50" }}
+<div class="{{ class }}">
   {{ teaser }}
     <div class="grid grid-cols-12 gap-30 border-2 lg:border-3 border-scarlet pt-5 pb-20 lg:pb-30 lg:pt-10 pl-20 lg:pl-40 pr-15 lg:pr-30">
-      <div class="col-span-full md:col-span-6 lg:col-span-6">
-        {{ partial:components/headings/h2 class="text-scarlet text-2xl lg:text-3xl xl:text-4xl" }}
-          Spezial
-        {{ /partial:components/headings/h2 }}
-        {{ partial:components/headings/h3 class="text-white uppercase text-md lg:text-lg xl:text-xl mb-10 lg:mb-15 leading-[1.1] text-pretty" }}
-          {{ title | nl2br }}
-        {{ /partial:components/headings/h3 }}
-        <div class="text-white">
-          {{ partial:components/editor }}
+        <div class="col-span-full md:col-span-6 lg:col-span-6">
+          {{ partial:components/headings/h2 class="text-scarlet text-2xl lg:text-3xl xl:text-4xl" }}
+            Spezial
+          {{ /partial:components/headings/h2 }}
+          {{ partial:components/headings/h3 class="text-white uppercase text-md lg:text-lg xl:text-xl mb-10 lg:mb-15 leading-[1.1] text-pretty" }}
+            {{ title | nl2br }}
+          {{ /partial:components/headings/h3 }}
+          {{ partial:components/editor/wrapper class="text-white" is_special="true" }}
         </div>
-      </div>
-      <div class="hidden md:block col-span-full md:col-span-6 lg:col-span-6 lg:pt-30">
-        {{ partial:components/media/image
-          :image="image"
-          preset="teaser"
-          :sizes="['2xl', 'xl', 'lg']"
-          eager="false"
-          wrapperClass="w-full"
-          class="w-full h-auto" }}
-      </div>
+        <div class="hidden md:block col-span-full md:col-span-6 lg:col-span-6 pt-16 lg:pt-30">
+          {{ partial:components/media/image
+            :image="image"
+            preset="teaser"
+            :sizes="['2xl', 'xl', 'lg']"
+            eager="false"
+            wrapperClass="w-full"
+            class="w-full h-auto" }}
+        </div>
     </div>
   {{ /teaser }}
-{{ /partial:layout/container/inner }}
+</div>

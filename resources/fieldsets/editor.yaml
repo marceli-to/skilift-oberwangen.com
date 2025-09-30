@@ -64,3 +64,29 @@ fields:
                     localizable: false
                     default: _blank
                     width: 50
+            information:
+              display: Informationen
+              instructions: 'Informationen hinzufügen'
+              icon: file-content-list
+              fields:
+                -
+                  handle: information
+                  field:
+                    type: grid
+                    display: Informationen
+                    localizable: false
+                    fields:
+                      -
+                        handle: label
+                        field:
+                          type: text
+                          display: Label
+                          localizable: false
+                          width: 50
+                      -
+                        handle: value
+                        field:
+                          type: text
+                          display: Wert
+                          localizable: false
+                          width: 50

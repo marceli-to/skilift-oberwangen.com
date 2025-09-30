@@ -51,12 +51,13 @@ tabs:
                       fields:
                         -
                           import: special_teaser
-                    intro_home:
+                    intro_homepage:
                       display: 'Intro Startseite'
+                      instructions: 'Intro für Startseite hinzufügen'
                       icon: text-formatting-markdown
                       fields:
                         -
-                          import: editor
+                          import: intro_homepage
   header:
     display: Header
     sections:

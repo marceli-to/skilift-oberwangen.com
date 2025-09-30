@@ -1,0 +1,20 @@
+title: 'Intro Startseite'
+fields:
+  -
+    handle: show_weather_info
+    field:
+      type: toggle
+      display: 'Wetterinformation anzeigen'
+      localizable: false
+      width: 50
+  -
+    handle: show_slope_info
+    field:
+      type: toggle
+      display: 'Pisteninformation anzeigen'
+      localizable: false
+      width: 50
+  -
+    import: editor
+  -
+    import: special_teaser
