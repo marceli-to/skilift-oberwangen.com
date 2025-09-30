@@ -1,0 +1,136 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: level
+            field:
+              type: terms
+              taxonomies:
+                - level
+              display: Level
+              mode: select
+              localizable: false
+              max_items: 1
+              validate:
+                - required
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: course_date
+            field:
+              type: date
+              display: Datum
+              localizable: false
+              validate:
+                - required
+          -
+            handle: course_start
+            field:
+              type: time
+              display: 'Zeit (Start)'
+              localizable: false
+              width: 50
+          -
+            handle: course_end
+            field:
+              type: time
+              display: 'Zeit (Ende)'
+              localizable: false
+              width: 50
+          -
+            handle: summary
+            field:
+              type: textarea
+              display: Zusammenfassung
+              localizable: false
+          -
+            handle: text_block
+            field:
+              type: replicator
+              display: Textblock
+              localizable: false
+              sets:
+                text_block:
+                  display: Textblock
+                  instructions: 'Textblock hinzufügen'
+                  icon: text-formatting-markdown
+                  sets:
+                    text_block:
+                      display: Textblock
+                      instructions: 'Textblock hinzufügen'
+                      icon: text-formatting-markdown
+                      fields:
+                        -
+                          handle: content
+                          field:
+                            buttons:
+                              - h3
+                              - bold
+                              - unorderedlist
+                              - removeformat
+                              - anchor
+                            toolbar_mode: floating
+                            remove_empty_nodes: true
+                            type: bard
+                            display: Inhalt
+                            localizable: false
+          -
+            handle: show_disclaimer
+            field:
+              default: true
+              type: toggle
+              display: 'Haftungshinweis anzeigen'
+              localizable: false
+  header:
+    display: Header
+    sections:
+      -
+        display: Header
+        fields:
+          -
+            handle: header_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Bild
+              localizable: false
+  seo:
+    display: SEO
+    sections:
+      -
+        display: SEO
+        fields:
+          -
+            import: seo
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+              show_regenerate: true
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - courses
+              max_items: 1
+              listable: false
+              localizable: true
+title: Kurse

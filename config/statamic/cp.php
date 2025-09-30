@@ -53,7 +53,7 @@ return [
           'title' => 'Seiten',
           'width' => 100,
           'sort' => 'order',
-        ], 
+        ],
     ],
 
     /*

@@ -1,0 +1,34 @@
+<article class="
+  border-t border-azure pt-10 lg:pt-15 flex gap-x-20 lg:gap-x-30 mb-20 lg:mb-30 last-of-type:mb-0 relative 
+  before:content-[''] before:block before:absolute before:-top-2 before:left-0 before:h-3 before:w-80 before:lg:w-115 before:bg-azure 
+  last:border-b last:border-azure last:pb-10 last:lg:pb-15 last:after:content-[''] last:after:block last:after:absolute last:after:-bottom-2 last:after:left-0 last:after:h-3 last:after:w-80 last:after:lg:w-115 last:after:bg-azure
+  ">
+  <div class="w-80 lg:w-115 font-bold leading-[1.2] shrink-0 flex flex-col gap-y-2 md:gap-y-1">
+    <span class="block">{{ course_date iso_format="dddd" }}</span>
+    <span class="block text-md lg:text-lg uppercase">{{ course_date iso_format="DD MMM" }}.</span>
+    <span class="block">{{ course_date iso_format="YYYY" }}</span>
+  </div>
+  <div class="flex justify-between flex-col md:flex-row md:flex-1">
+    <a 
+      href="{{ url }}" 
+      title="{{ title }}"
+      class="!no-underline flex flex-col gap-y-1">
+      <span class="block font-bold text-xs mb-1">
+        {{ course_start | format="H.i" }}{{ if course_end }} – {{ course_end | format="H.i" }}{{ /if }} Uhr
+      </span>
+      {{ partial:components/headings/h2 class="text-md lg:text-lg" }}
+        {{ level:title }} – {{ title }}
+      {{ /partial:components/headings/h2 }}
+      {{ if summary }}
+        <div>{{ summary }}</div>
+      {{ /if }}
+    </a>
+    <div class="mt-20 md:!hidden">
+      <a href="">Details und Anmeldung</a>
+    </div>
+    <div class="md:pt-25 lg:pr-45 hidden md:block md:shrink-0">
+      <a href="">Details und Anmeldung</a>
+    </div>
+  </div>
+
+</article>

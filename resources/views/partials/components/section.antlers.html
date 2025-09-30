@@ -35,5 +35,9 @@
       {{ /partial:partials/layout/container/inner }}
     {{ /if }}
 
+    {{ if type == 'course_list' }}
+      {{ partial:courses/list }}
+    {{ /if }}
+
   {{ /elements }}
 </section>

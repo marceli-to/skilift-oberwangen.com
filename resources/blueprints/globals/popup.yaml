@@ -1,0 +1,34 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: is_active
+            field:
+              type: toggle
+              display: 'Aktiviert?'
+              localizable: false
+          -
+            handle: title
+            field:
+              type: textarea
+              display: Titel
+              localizable: false
+          -
+            handle: text
+            field:
+              buttons:
+                - bold
+                - unorderedlist
+                - removeformat
+                - anchor
+              toolbar_mode: floating
+              remove_empty_nodes: true
+              link_collections:
+                - pages
+              container: assets
+              type: bard
+              display: Text
+              localizable: false

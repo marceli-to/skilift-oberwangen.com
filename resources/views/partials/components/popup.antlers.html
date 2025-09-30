@@ -1,0 +1,22 @@
+<div 
+  x-data="popup()" 
+  x-init="init()" 
+  x-show="isVisible" 
+  x-cloak 
+  class="absolute left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center">
+  <div class="relative max-w-[90%] md:max-w-xl bg-scarlet border-10 md:border-15 border-white p-15 md:px-30 md:py-25 drop-shadow-2xl md:drop-shadow-3xl">
+    <button @click="close()" class="absolute right-10 top-10 flex w-20 h-20 items-center justify-center bg-white">
+      {{ partial:icons/cross class="w-12 h-auto text-scarlet" }}
+    </button>
+
+    <div class="text-white text-xxs md:text-xs">
+      {{ partial:components/headings/h2 class="text-white text-md md:text-xl mb-10 md:mb-20" }}
+        {{ popup:title | nl2br }}
+      {{ /partial:components/headings/h2 }}
+
+      <div class="text-white">
+        {{ popup:text }}
+      </div>
+    </div>
+  </div>
+</div>

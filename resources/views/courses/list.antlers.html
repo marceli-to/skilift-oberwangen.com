@@ -1,0 +1,25 @@
+{{ partial:partials/layout/container/inner }}
+  {{ nocache }}
+    {{ collection:courses as="courses" sort="course_date:asc" course_date:is_after="{now modify_date='-1 day' format='Y-m-d'}" limit="{{ limit ? 3 : null }}" }}
+      {{ if courses }}
+        {{ courses }}
+          {{ partial:courses/item }}
+        {{ /courses }}
+      {{ /if }}
+    {{ /collection:courses }}
+  {{ /nocache }}
+
+  {{#
+    {{ if limit }}
+      {{ nocache }}
+        {{ collection:courses as="all_upcoming_courses" sort="course_date:asc" course_date:is_after="{now modify_date='-1 day' format='Y-m-d'}" }}
+          {{ if all_upcoming_courses | count > 3 }}
+            <div class="flex justify-center mt-40">
+              {{ partial:components/buttons/secondary  label="Weitere Veranstaltungen anzeigen" url="/veranstaltungen" }}
+            </div>
+          {{ /if }}
+        {{ /collection:courses }}
+      {{ /nocache }}
+    {{ /if }}
+  #}}
+{{ /partial:partials/layout/container/inner }}

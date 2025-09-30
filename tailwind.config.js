@@ -65,6 +65,13 @@ export default {
 
       borderWidth: {
         '3': '3px',
+        '10': '10px',
+        '15': '15px',
+      },
+
+      dropShadow: {
+        '2xl': '0 10px 20px rgba(0, 0, 0, .7)',
+        '3xl': '0 20px 40px rgba(0, 0, 0, .7)',
       },
       
       zIndex: {

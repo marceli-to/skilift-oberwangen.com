@@ -72,3 +72,8 @@ fields:
               instructions: 'Kontaktformular hinzufügen'
               icon: form-text-field
               fields: {  }
+            course_list:
+              display: Kurse
+              instructions: 'Kurse als Liste anzeigen'
+              icon: file-content-list
+              fields: {  }

@@ -1,0 +1,27 @@
+<section class="w-full pt-20 pb-30 lg:pt-50 lg:pb-60 bg-white">
+  {{ partial:partials/layout/container/inner }}
+
+    {{ partial:components/headings/h1 }}
+      {{ level:title }} – {{ title }}
+    {{ /partial:components/headings/h1 }}
+
+    <article class="max-w-prose [&_h2]:text-navy [&_h2]:text-md md:[&_h2]:text-lg [&_h2]:mb-5 md:[&_h2]:mb-10">
+
+      {{ partial:components/headings/h2 }}
+        {{ course_date iso_format="dddd, Do MMMM YYYY" }}<br>
+        {{ course_start | format="H.i" }}{{ if course_end }} – {{ course_end | format="H.i" }}{{ /if }} Uhr
+      {{ /partial:components/headings/h2 }}
+
+      {{ text_block }}
+        {{ content }}
+      {{ /text_block }}
+
+      {{ if show_disclaimer }}
+        <h3>Haftung</h3>
+        <p>Versicherung ist Sache der Teilnehmenden. Ehrziehungsberechtigte Personen haften für ihre Kinder.</p>
+      {{ /if }}
+
+    </article>
+
+  {{ /partial:partials/layout/container/inner }}
+</section>
