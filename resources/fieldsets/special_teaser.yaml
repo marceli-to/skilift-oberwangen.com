@@ -1,6 +1,20 @@
 title: Spezialteaser
 fields:
   -
+    handle: special_teaser_theme
+    field:
+      options:
+        -
+          key: dark
+          value: Dunkel
+        -
+          key: light
+          value: Hell
+      default: dark
+      type: select
+      display: Design
+      localizable: false
+  -
     handle: teaser
     field:
       collapse: true

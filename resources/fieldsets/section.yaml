@@ -53,6 +53,13 @@ fields:
           display: Spezialelemente
           icon: addon-boxes-stack
           sets:
+            special_teaser:
+              display: Spezialteaser
+              instructions: 'Spezialteaser hinzufügen'
+              icon: text-formatting-wrap-image-right
+              fields:
+                -
+                  import: special_teaser
             sponsors:
               display: Sponsoren
               instructions: 'Sponsoren hinzufügen'

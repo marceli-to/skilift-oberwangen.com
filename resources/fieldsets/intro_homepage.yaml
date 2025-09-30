@@ -15,6 +15,18 @@ fields:
       localizable: false
       width: 50
   -
+    handle: content
+    field:
+      type: section
+      display: Inhalt
+      localizable: false
+  -
     import: editor
+  -
+    handle: special_teaser
+    field:
+      type: section
+      display: Spezialteaser
+      localizable: false
   -
     import: special_teaser

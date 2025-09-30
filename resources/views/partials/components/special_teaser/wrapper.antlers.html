@@ -5,20 +5,18 @@
           {{ partial:components/headings/h2 class="text-scarlet text-2xl lg:text-3xl xl:text-4xl" }}
             Spezial
           {{ /partial:components/headings/h2 }}
-          {{ partial:components/headings/h3 class="text-white uppercase text-md lg:text-lg xl:text-xl mb-10 lg:mb-15 leading-[1.1] text-pretty" }}
+          {{ partial:components/headings/h3 class="{{ special_teaser_theme == 'dark' ? 'text-white' : 'text-navy' }} uppercase text-md lg:text-lg xl:text-xl mb-10 lg:mb-15 leading-[1.1] text-pretty" }}
             {{ title | nl2br }}
           {{ /partial:components/headings/h3 }}
-          {{ partial:components/editor/wrapper class="text-white" is_special="true" }}
+          {{ partial:components/editor/wrapper class="{{ special_teaser_theme == 'dark' ? 'text-white' : 'text-navy' }}" is_special="true" }}
         </div>
-        <div class="hidden md:block col-span-full md:col-span-6 lg:col-span-6 pt-16 lg:pt-30">
-          {{ partial:components/media/image
-            :image="image"
-            preset="teaser"
-            :sizes="['2xl', 'xl', 'lg']"
-            eager="false"
-            wrapperClass="w-full"
-            class="w-full h-auto" }}
-        </div>
+        {{ partial:components/media/image
+          :image="image"
+          preset="teaser"
+          :sizes="['2xl', 'xl', 'lg']"
+          eager="false"
+          wrapperClass="hidden md:block col-span-full md:col-span-6 lg:col-span-6 pt-16 lg:pt-30"
+          class="w-full h-full object-cover" }}
     </div>
   {{ /teaser }}
 </div>

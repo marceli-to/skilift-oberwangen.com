@@ -29,5 +29,11 @@
       {{ partial:components/hero }}
     {{ /if }}
 
+    {{ if type == 'special_teaser' }}
+      {{ partial:partials/layout/container/inner }}
+        {{ partial:components/special_teaser/wrapper }}
+      {{ /partial:partials/layout/container/inner }}
+    {{ /if }}
+
   {{ /elements }}
 </section>
