@@ -119,7 +119,7 @@
           label="Ich habe die <a href='/datenschutz' class='decoration-1'>Datenschutzerklärung</a> gelesen und stimme dieser zu.*"
         />
       </form-group>
-      <form-group class="lg:!mt-15">
+      <form-group class="!mt-15">
         <form-button 
           type="submit" 
           :label="'Anmelden'"
