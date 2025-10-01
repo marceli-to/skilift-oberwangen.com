@@ -1,0 +1,102 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              localizable: false
+              validate:
+                - required
+          -
+            handle: course_date
+            field:
+              type: date
+              display: Kursdatum
+              localizable: false
+          -
+            handle: firstname
+            field:
+              type: text
+              display: 'Vorname (Kind)'
+              localizable: false
+          -
+            handle: name
+            field:
+              type: text
+              display: 'Name (Kind)'
+              localizable: false
+          -
+            handle: dob
+            field:
+              type: date
+              display: 'Geburtsdatum (Kind)'
+              localizable: false
+          -
+            handle: name_parents
+            field:
+              type: text
+              display: 'Vorname, Name (Erziehungsberechtigte)'
+              localizable: false
+          -
+            handle: street
+            field:
+              type: text
+              display: Adresse
+              localizable: false
+          -
+            handle: location
+            field:
+              type: text
+              display: 'PLZ / Ort'
+              localizable: false
+          -
+            handle: phone
+            field:
+              type: text
+              display: Telefon
+              localizable: false
+          -
+            handle: email
+            field:
+              type: text
+              display: E-Mail
+              localizable: false
+          -
+            handle: remarks
+            field:
+              type: textarea
+              display: Mitteilung
+              localizable: false
+          -
+            handle: state
+            field:
+              options:
+                -
+                  key: paid
+                  value: Bezahlt
+                -
+                  key: cancelled
+                  value: Storniert
+                -
+                  key: waitinglist
+                  value: Warteliste
+              type: select
+              display: Status
+              localizable: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+title: 'Anmeldungen Kurse'

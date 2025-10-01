@@ -104,6 +104,48 @@ tabs:
               type: assets
               display: Bild
               localizable: false
+  registration:
+    display: Einstellungen
+    sections:
+      -
+        display: Einstellungen
+        fields:
+          -
+            handle: number_open_seats
+            field:
+              type: text
+              display: 'Anzahl freie Plätze'
+              instructions: 'Definiert die Anzahl Plätze für diesen Kurs'
+              localizable: false
+          -
+            handle: invoice
+            field:
+              max_files: 1
+              container: assets
+              folder: rechnungen
+              type: assets
+              display: 'EZS / QR Rechnung'
+              instructions: 'Wird mit dem Bestätigungsmail versendet'
+              localizable: false
+          -
+            handle: text_email
+            field:
+              default: |-
+                Guten Tag
+
+                Besten Dank für Ihre Anmeldung.
+
+                Sie erhalten keine weitere Bestätigung von uns.
+
+                Freundliche Grüsse
+
+                Skilift Oberwangen
+                Skiliftweg
+                8374 Oberwangen TG
+                info@skilift-oberwangen.com
+              type: textarea
+              display: 'Bestätigungs E-Mail'
+              localizable: false
   seo:
     display: SEO
     sections:

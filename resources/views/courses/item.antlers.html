@@ -1,7 +1,7 @@
 <article class="
   border-t border-azure pt-10 lg:pt-15 flex gap-x-20 lg:gap-x-30 mb-20 lg:mb-30 last-of-type:mb-0 relative 
   before:content-[''] before:block before:absolute before:-top-2 before:left-0 before:h-3 before:w-80 before:lg:w-115 before:bg-azure 
-  last:border-b last:border-azure last:pb-10 last:lg:pb-15 last:after:content-[''] last:after:block last:after:absolute last:after:-bottom-2 last:after:left-0 last:after:h-3 last:after:w-80 last:after:lg:w-115 last:after:bg-azure
+  last:border-b last:border-azure last:pb-20 last:lg:pb-30 last:after:content-[''] last:after:block last:after:absolute last:after:-bottom-2 last:after:left-0 last:after:h-3 last:after:w-80 last:after:lg:w-115 last:after:bg-azure
   ">
   <div class="w-80 lg:w-115 font-bold leading-[1.2] shrink-0 flex flex-col gap-y-2 md:gap-y-1">
     <span class="block">{{ course_date iso_format="dddd" }}</span>
@@ -14,7 +14,7 @@
       title="{{ title }}"
       class="!no-underline flex flex-col gap-y-1">
       <span class="block font-bold text-xs mb-1">
-        {{ course_start | format="H.i" }}{{ if course_end }} – {{ course_end | format="H.i" }}{{ /if }} Uhr
+        {{ course_start iso_format="H.mm" }}{{ if course_end }} – {{ course_end iso_format="H.mm" }}{{ /if }} Uhr
       </span>
       {{ partial:components/headings/h2 class="text-md lg:text-lg" }}
         {{ level:title }} – {{ title }}
@@ -23,12 +23,21 @@
         <div>{{ summary }}</div>
       {{ /if }}
     </a>
-    <div class="mt-20 md:!hidden">
-      <a href="">Details und Anmeldung</a>
+    <div class="mt-20 md:mt-0 md:pt-25 lg:pr-30 md:shrink-0">
+      <a 
+        href="{{ url }}"
+        aria-label="Details und Anmeldung – {{ title }} – {{ course_date iso_format="dddd, Do MMMM YYYY" }}"
+        class="bg-azure hover:bg-navy transition-colors text-white uppercase font-bold px-10 lg:px-20 pt-6 pb-7 lg:pt-8 lg:pb-9 text-xxs lg:text-xs leading-none inline-flex items-center">
+        Details und Anmeldung
+      </a>
     </div>
-    <div class="md:pt-25 lg:pr-45 hidden md:block md:shrink-0">
-      <a href="">Details und Anmeldung</a>
-    </div>
+    {{# <div class="">
+      <a 
+        href="{{ url }}"
+        aria-label="Details und Anmeldung – {{ title }} – {{ course_date iso_format="dddd, Do MMMM YYYY" }}"
+        class="bg-azure hover:bg-navy transition-colors text-white uppercase font-bold px-10 lg:px-20 pt-6 pb-7 lg:pt-8 lg:pb-9 text-xxs lg:text-xs leading-none inline-flex items-center">
+        Details und Anmeldung
+      </a>
+    </div> #}}
   </div>
-
 </article>

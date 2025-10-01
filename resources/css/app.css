@@ -70,7 +70,10 @@ section.bg-sky + section.bg-sky {
 
 /* Patterns */
 .bg-pattern {
-  @apply bg-[repeating-linear-gradient(-45deg,_#0096CD_0px,_#0096CD_6px,_#ffffff_6px,_#ffffff_8px)]
+  /* @apply bg-[repeating-linear-gradient(-45deg,_#0096CD_0px,_#0096CD_6px,_#ffffff_6px,_#ffffff_8px)] */
+  /* https://stripesgenerator.com/ */
+  background-image: linear-gradient(135deg, #ffffff 12.50%, #0096cd 12.50%, #0096cd 50%, #ffffff 50%, #ffffff 62.50%, #0096cd 62.50%, #0096cd 100%);
+  background-size: 11.31px 11.31px;
 }
 
 /* Map marker */
@@ -83,6 +86,7 @@ input[type=text],
 input[type=email],
 input[type=tel],
 input[type=number],
+input[type=date],
 textarea {
   @apply block bg-white text-navy w-full border-none py-10 px-15 lg:py-15 lg:px-20 placeholder:block placeholder:text-navy placeholder:mt-5 placeholder:!leading-none !outline-none !ring-0
 

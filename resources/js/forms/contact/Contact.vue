@@ -69,7 +69,7 @@
         />
       </form-group>
     </div>
-    <form-group class="gap-x-10 lg:gap-x-20 flex">
+    <form-group>
       <form-checkbox
         v-model="form.privacy"
         :error="errors.privacy"
@@ -139,7 +139,7 @@ async function submitForm() {
   formSuccess.value = false;
   formError.value = false;
   try {
-    const response = await axios.post('/api/contact/submission', {
+    const response = await axios.post('/api/contact/submit', {
       ...form.value
     });
     handleSuccess();

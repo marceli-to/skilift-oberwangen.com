@@ -1,4 +1,4 @@
-<section class="w-full pt-20 pb-30 lg:pt-50 lg:pb-60 bg-white">
+{{ partial:partials/layout/container/section theme_color="bg-white" }}
   {{ partial:partials/layout/container/inner }}
 
     {{ partial:components/headings/h1 }}
@@ -9,7 +9,7 @@
 
       {{ partial:components/headings/h2 }}
         {{ course_date iso_format="dddd, Do MMMM YYYY" }}<br>
-        {{ course_start | format="H.i" }}{{ if course_end }} – {{ course_end | format="H.i" }}{{ /if }} Uhr
+        {{ course_start iso_format="H.mm" }}{{ if course_end }} – {{ course_end iso_format="H.mm" }}{{ /if }} Uhr
       {{ /partial:components/headings/h2 }}
 
       {{ text_block }}
@@ -24,4 +24,21 @@
     </article>
 
   {{ /partial:partials/layout/container/inner }}
-</section>
+{{ /partial:partials/layout/container/section }}
+
+{{ partial:partials/layout/container/section theme_color="bg-sky" }}
+
+  {{ partial:partials/layout/container/inner }}
+
+    {{ partial:components/headings/h2 class="text-xl md:text-2xl leading-none mb-20 lg:mb-40" }}
+      Anmeldung
+    {{ /partial:components/headings/h2 }}
+
+    <div id="course-form">
+      <course-registration :course-id="'{{ id }}'"></course-registration>
+    </div>
+
+  {{ /partial:partials/layout/container/inner }}
+
+{{ /partial:partials/layout/container/section }}
+

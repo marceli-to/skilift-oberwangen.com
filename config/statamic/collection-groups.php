@@ -16,7 +16,10 @@
  */
 return [
   'Anmeldungen' => [
-    // 'Veranstaltungen' => 'event_registrations',
-    'Kontaktformular' => 'contact_form',
+    'Kurse' => 'course_registrations',
   ],
+  'Formulare' => [
+    'Kontakt' => 'contact_form',
+  ],
+
 ];

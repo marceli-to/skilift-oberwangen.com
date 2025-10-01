@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
-  public function submission(Request $request)
+  public function store(Request $request)
   {
     $validationResult = $this->validateRequest($request);
 
