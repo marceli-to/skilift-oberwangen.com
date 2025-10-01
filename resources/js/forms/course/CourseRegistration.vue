@@ -33,7 +33,7 @@
           />
         </form-group>
         <form-group>
-          <form-text-field
+          <form-date-field
             :type="errors.dob ? 'text' : 'date'"
             v-model="form.dob"
             :error="errors.dob"
@@ -134,6 +134,7 @@ import { ref, watch, onMounted } from 'vue';
 import axios from 'axios';
 import FormGroup from '@/forms/components/fields/group.vue';
 import FormTextField from '@/forms/components/fields/text.vue';
+import FormDateField from '@/forms/components/fields/date.vue';
 import FormTextareaField from '@/forms/components/fields/textarea.vue';
 import FormButton from '@/forms/components/fields/button.vue';
 import FormCheckbox from '@/forms/components/fields/checkbox.vue';

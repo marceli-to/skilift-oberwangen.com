@@ -8,7 +8,7 @@
       @focus="$emit('update:error', '')"
       :placeholder="placeholder"
       :class="[
-        { '!border-red-500': error },
+        { '!border-red-500 placeholder:!text-red-500': error },
       ]"
     >
     <Error :error="error" />
