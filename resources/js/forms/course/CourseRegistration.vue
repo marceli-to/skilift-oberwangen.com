@@ -38,7 +38,6 @@
             v-model="form.dob"
             :error="errors.dob"
             @update:error="errors.dob = $event"
-            :placeholder="errors.dob ? errors.dob : 'Geburtsdatum (Kind) *'"
             label="Geburtsdatum (Kind) "
             aria-label="Geburtsdatum (Kind)"
           />
