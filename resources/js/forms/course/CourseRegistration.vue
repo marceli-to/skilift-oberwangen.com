@@ -38,7 +38,7 @@
             type="text"
             v-maska="'##.##.####'"
             v-model="form.dob"
-            :placeholder="errors.dob ? errors.dob : 'Geburtsdatum (Kind) *'"
+            :placeholder="errors.dob ? errors.dob : 'Geburtsdatum (Kind), z.B. 12.12.2022 *'"
             @focus="errors.dob = ''"
             :class="[
               { '!border-red-500 placeholder:!text-red-500': errors.dob },
