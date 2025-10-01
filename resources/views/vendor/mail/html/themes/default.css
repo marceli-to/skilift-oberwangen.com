@@ -2,10 +2,10 @@
 body,
 body *:not(html):not(style):not(br):not(tr):not(code) {
   box-sizing: border-box;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.4;
-  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #002D55;
   position: relative;
 }
 
@@ -193,12 +193,12 @@ footer {
 .text-base,
 .text-base p {
   font-size: 15px !important;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .text-xsmall {
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .text-xxsmall {
