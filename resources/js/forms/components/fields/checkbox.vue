@@ -11,7 +11,7 @@
         :required="required" 
         type="checkbox" 
         @change="handleChange"
-        class="mt-2"
+        class="mt-2 shrink-0"
         :class="[
           { '!border-red-500': error },
         ]"
