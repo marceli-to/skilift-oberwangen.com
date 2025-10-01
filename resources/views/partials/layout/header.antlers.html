@@ -1,5 +1,26 @@
 <header class="relative w-full">
 
+  <div class="absolute md:fixed top-90 md:top-[220px] lg:top-[300px] overflow-hidden right-0 z-50 flex flex-col gap-y-10 lg:gap-y-15">
+    {{ if quicklinks:url_courses }}
+      {{ partial:components/quicklink :url="quicklinks:url_courses" target="_self" }}
+        {{ partial:icons/skier class="w-21 lg:w-29 h-auto" }}
+        <strong>Skischule</strong>
+      {{ /partial:components/quicklink }}
+    {{ /if }}
+    {{ if quicklinks:url_arosa_stuebli }}
+      {{ partial:components/quicklink :url="quicklinks:url_arosa_stuebli" target="_self" }}
+        {{ partial:icons/cheese class="w-22 lg:w-32 h-auto" }}
+        <strong>Arosa Stübli</strong>
+      {{ /partial:components/quicklink }}
+    {{ /if }}
+    {{ if quicklinks:url_webcam }}
+      {{ partial:components/quicklink :url="quicklinks:url_webcam" target="_blank" }}
+        {{ partial:icons/webcam class="w-18 lg:w-28 h-auto" }}
+        <strong>Webcam</strong>
+      {{ /partial:components/quicklink }}
+    {{ /if }}
+  </div>
+
   <div class="w-full absolute text-white z-50 top-45 md:top-80 lg:top-120">
     {{ partial:layout/container/outer }}
       

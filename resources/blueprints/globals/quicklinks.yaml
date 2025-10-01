@@ -1,0 +1,30 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: url_courses
+            field:
+              collections:
+                - pages
+              type: link
+              display: Skischule
+              localizable: false
+          -
+            handle: url_arosa_stuebli
+            field:
+              collections:
+                - pages
+              type: link
+              display: 'Arosa Stübli'
+              localizable: false
+          -
+            handle: url_webcam
+            field:
+              collections:
+                - pages
+              type: link
+              display: Webcam
+              localizable: false
