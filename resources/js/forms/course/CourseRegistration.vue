@@ -159,15 +159,15 @@ const hasOpenSeats = ref(false);
 
 const form = ref({
   course_id: props.courseId,
-  name: 'Morf',
-  firstname: 'Kimi',
-  dob: '2015-09-22',
-  name_parents: 'Gabriela Morf',
-  street: 'Letzigraben 149',
-  location: '8344 Bäretswil',
-  phone: '076 525 52 52',
-  email: 'm@marceli.to',
-  remarks: 'Test Test',
+  name: null,
+  firstname: null,
+  dob: null,
+  name_parents: null,
+  street: null,
+  location: null,
+  phone: null,
+  email: null,
+  remarks: null,
   privacy: false
 });
 

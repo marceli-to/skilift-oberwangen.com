@@ -107,13 +107,13 @@ const formSuccess = ref(false);
 const formError = ref(false);
 
 const form = ref({
-  name: 'Stadelmann',
-  firstname: 'Marcel',
-  phone: '078 123 45 67',
-  street: 'Musterstrasse 1',
-  location: '8800 Musterort',
-  email: 'marcel.stadelmann@example.com',
-  message: 'Ich möchte mich mit Ihnen verbinden.',
+  name: null,
+  firstname: null,
+  phone: null,
+  street: null,
+  location: null,
+  email: null,
+  message: null,
   privacy: false
 });
 
