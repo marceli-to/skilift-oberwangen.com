@@ -52,8 +52,4 @@
     </div>
     <br>
   @endif
-  <br>
-  <footer>
-    <br>Skilift Oberwangen, Oberwangen TG
-  </footer>
 </x-mail::message>
