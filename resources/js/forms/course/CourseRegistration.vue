@@ -35,7 +35,7 @@
         <form-group>
           <input
             id="dob"
-            type="number"
+            type="text"
             v-maska="'##.##.####'"
             v-model="form.dob"
             :placeholder="errors.dob ? errors.dob : 'Geburtsdatum (Kind), z.B. 12.12.2022 *'"
