@@ -33,16 +33,14 @@
           />
         </form-group>
         <form-group>
-          <input
-            id="dob"
-            type="text"
-            v-maska="'##.##.####'"
+          <form-masked-text-field
             v-model="form.dob"
+            :error="errors.dob"
+            @update:error="errors.dob = $event"
             :placeholder="errors.dob ? errors.dob : 'Geburtsdatum (Kind), z.B. 12.12.2022 *'"
-            @focus="errors.dob = ''"
-            :class="[
-              { '!border-red-500 placeholder:!text-red-500': errors.dob },
-            ]"
+            label="Geburtsdatum (Kind)"
+            aria-label="Geburtsdatum (Kind)"
+            mask="##.##.####"
           />
         </form-group>
         <form-group>
@@ -134,11 +132,10 @@
 </template>
 <script setup>
 import { ref, watch, onMounted } from 'vue';
-import { vMaska } from "maska/vue"
 import axios from 'axios';
 import FormGroup from '@/forms/components/fields/group.vue';
 import FormTextField from '@/forms/components/fields/text.vue';
-import FormDateField from '@/forms/components/fields/date.vue';
+import FormMaskedTextField from '@/forms/components/fields/masked-text.vue';
 import FormTextareaField from '@/forms/components/fields/textarea.vue';
 import FormButton from '@/forms/components/fields/button.vue';
 import FormCheckbox from '@/forms/components/fields/checkbox.vue';
