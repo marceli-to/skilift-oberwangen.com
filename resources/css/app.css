@@ -94,6 +94,17 @@ input[type=number] {
   @apply appearance-none;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
 input[type=date] {
   @apply py-10 px-15 lg:py-15 lg:px-20 bg-white text-navy !outline-none !ring-0
 }
