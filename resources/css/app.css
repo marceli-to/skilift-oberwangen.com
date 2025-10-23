@@ -60,7 +60,6 @@ h2:not(:first-of-type) {
   @apply text-white text-xl md:text-2xl leading-[1.1] mb-15 lg:mb-25;
 }
 
-
 /* Containers */
 .max-w-inner-container + .max-w-inner-container {
   @apply mt-30 lg:mt-60;
@@ -74,7 +73,6 @@ section.bg-sky + section.bg-sky {
 
 /* Patterns */
 .bg-pattern {
-  /* @apply bg-[repeating-linear-gradient(-45deg,_#0096CD_0px,_#0096CD_6px,_#ffffff_6px,_#ffffff_8px)] */
   /* https://stripesgenerator.com/ */
   background-image: linear-gradient(135deg, #ffffff 12.50%, #0096cd 12.50%, #0096cd 50%, #ffffff 50%, #ffffff 62.50%, #0096cd 62.50%, #0096cd 100%);
   background-size: 11.31px 11.31px;
