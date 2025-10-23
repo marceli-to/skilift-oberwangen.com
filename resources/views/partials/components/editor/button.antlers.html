@@ -1,9 +1,9 @@
-<div class="mt-15 md:mt-30 {{ wrapperClass }}">
+<div>
   <a 
     href="{{ url }}"
     target="{{ target  ?? '_blank' }}"
     title="{{ text }}"
-    class="{{ is_special ? 'bg-scarlet hover:bg-white hover:!text-scarlet' : 'bg-azure hover:bg-navy' }} transition-colors text-white uppercase font-bold px-10 lg:px-20 pt-6 pb-7 lg:pt-8 lg:pb-9 text-xxs lg:text-xs leading-none inline-flex items-center">
+    class="{{ is_special ? 'bg-scarlet hover:bg-white hover:!text-scarlet' : 'bg-azure hover:bg-navy' }} transition-colors text-white uppercase font-bold px-10 lg:px-20 pt-6 pb-7 lg:pt-8 lg:pb-9 text-xxs lg:text-xs leading-none inline-flex items-center w-auto grow-0">
     {{ text }}
   </a>
 </div>

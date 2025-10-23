@@ -6,7 +6,17 @@
     {{ /if }}
 
     {{ if type == 'link' }}
-      {{ partial:components/editor/button wrapperClass="inline-block mr-15 md:mr-30" url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
+      <div class="my-15 md:my-30 last:mb-0">
+        {{ partial:components/editor/button url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
+      </div>
+    {{ /if }}
+
+    {{ if type == 'link_group' }}
+      <div class="my-15 md:my-30 last:mb-0 flex {{ orientation == 'vertical' ? 'flex-col gap-y-10 md:gap-y-20' : 'flex-wrap gap-x-15 md:gap-x-30' }}">
+        {{ link }}
+          {{ partial:components/editor/button url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
+        {{ /link }}
+      </div>
     {{ /if }}
 
     {{ if type == 'information' }}

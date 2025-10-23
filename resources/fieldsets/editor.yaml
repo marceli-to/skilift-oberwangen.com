@@ -64,6 +64,71 @@ fields:
                     localizable: false
                     default: _blank
                     width: 50
+            link_group:
+              display: 'Button / Link (Gruppe)'
+              instructions: 'Button / Link Gruppe hinzufügen'
+              icon: link
+              fields:
+                -
+                  handle: orientation
+                  field:
+                    options:
+                      -
+                        key: horizontal
+                        value: Horizontal
+                      -
+                        key: vertical
+                        value: Vertikal
+                    default: horizontal
+                    type: select
+                    display: Ausrichtung
+                    localizable: false
+                -
+                  handle: link
+                  field:
+                    type: replicator
+                    display: 'Button / Link'
+                    localizable: false
+                    sets:
+                      neue_setgruppe:
+                        display: 'Neue Setgruppe'
+                        sets:
+                          link:
+                            display: 'Button / Link'
+                            instructions: 'Button / Link hinzufügen'
+                            icon: link
+                            fields:
+                              -
+                                handle: link
+                                field:
+                                  collections:
+                                    - pages
+                                  container: assets
+                                  type: link
+                                  display: Link
+                                  localizable: false
+                              -
+                                handle: link_text
+                                field:
+                                  type: text
+                                  display: Linktext
+                                  localizable: false
+                                  width: 50
+                              -
+                                handle: target
+                                field:
+                                  options:
+                                    -
+                                      key: _blank
+                                      value: 'Neues Fenster'
+                                    -
+                                      key: _self
+                                      value: 'Gleiches Fenster'
+                                  default: _blank
+                                  type: select
+                                  display: 'Öffnen in'
+                                  localizable: false
+                                  width: 50
             information:
               display: Informationen
               instructions: 'Informationen hinzufügen'
