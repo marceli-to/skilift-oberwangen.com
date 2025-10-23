@@ -109,6 +109,9 @@
           />
         </form-group>
       </div>
+      <div class="max-w-4xl">
+        Die Anmeldung für den Skikurs ist verbindlich. Vor Beginn des Kurses muss die Skistunde am Skischulwagen bezahlt werden. Anschliessend erhalten Sie dort eine Skischulweste. Die Bezahlung kann entweder mit Twint oder in bar erfolgen.
+      </div>
       <form-group>
         <form-checkbox
           v-model="form.privacy"
