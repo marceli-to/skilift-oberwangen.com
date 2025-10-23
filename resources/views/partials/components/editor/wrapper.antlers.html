@@ -6,7 +6,7 @@
     {{ /if }}
 
     {{ if type == 'link' }}
-      {{ partial:components/editor/button wrapperClass="my-15 md:my-30" url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
+      {{ partial:components/editor/button wrapperClass="inline-block mr-15 md:mr-30" url="{{ link }}" target="{{ target  ?? '_blank' }}" text="{{ link_text }}" }}
     {{ /if }}
 
     {{ if type == 'information' }}

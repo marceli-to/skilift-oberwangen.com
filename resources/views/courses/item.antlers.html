@@ -17,7 +17,7 @@
         {{ course_start iso_format="H.mm" }}{{ if course_end }} – {{ course_end iso_format="H.mm" }}{{ /if }} Uhr
       </span>
       {{ partial:components/headings/h2 class="text-md lg:text-lg" }}
-        {{ level:title }} – {{ title }}
+        {{ title }} – {{ level:title }}
       {{ /partial:components/headings/h2 }}
       {{ if summary }}
         <div>{{ summary }}</div>
