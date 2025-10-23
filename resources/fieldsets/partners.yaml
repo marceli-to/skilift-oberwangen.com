@@ -1,0 +1,43 @@
+title: Partner
+fields:
+  -
+    handle: partners
+    field:
+      type: replicator
+      display: Partner
+      localizable: false
+      collapse: true
+      sets:
+        teasers:
+          display: Partner
+          icon: text-formatting-image-top
+          sets:
+            teaser:
+              display: Partner
+              instructions: 'Partner hinzufügen'
+              icon: text-formatting-image-top
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Bild
+                    localizable: false
+                -
+                  handle: logo
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Logo
+                    localizable: false
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Titel
+                    localizable: false
+                -
+                  import: editor

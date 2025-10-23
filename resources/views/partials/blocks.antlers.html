@@ -10,3 +10,20 @@
 {{ if type == 'intro_homepage' }}
   {{ partial:components/intro_home }}
 {{ /if }}
+
+{{ if type == 'single_image' }}
+  {{ partial:partials/layout/container/section }}
+    {{ if has_pattern }}
+      <div class="h-125 lg:h-225 w-full bg-pattern absolute top-0 left-0 -z-1" aria-hidden="true"></div>
+    {{ /if }}
+    {{ partial:partials/layout/container/outer }}
+      {{ if has_link }}
+        <a href="{{ link }}" target="_blank">
+      {{ /if }}
+        {{ partial:components/media/image }}
+      {{ if has_link }}
+        </a>
+      {{ /if }}
+    {{ /partial:partials/layout/container/outer }}
+  {{ /partial:partials/layout/container/section }}
+{{ /if }}

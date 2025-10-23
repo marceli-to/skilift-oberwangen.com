@@ -1,11 +1,11 @@
 {{ partial:layout/container/inner }}
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-20">
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-10 gap-20">
     {{ sponsors }}
       <a 
         href="" 
         target="_blank" 
         aria-label="{{ title }}"
-        class="flex items-center justify-center group overflow-hidden">
+        class="flex items-center justify-center group overflow-hidden lg:col-span-2">
         <img src="{{ logo }}" alt="{{ title }}" width="406" height="131" class="p-5 border border-gray-200 w-full h-auto group-hover:scale-[0.95] transition-all">
       </a>
     {{ /sponsors }}

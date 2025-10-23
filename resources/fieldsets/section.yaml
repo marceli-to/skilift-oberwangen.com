@@ -77,3 +77,10 @@ fields:
               instructions: 'Kurse als Liste anzeigen'
               icon: file-content-list
               fields: {  }
+            partner:
+              display: Partner
+              instructions: 'Partner hinzufügen'
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: partners

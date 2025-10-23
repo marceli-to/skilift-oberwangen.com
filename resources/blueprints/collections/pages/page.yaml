@@ -40,6 +40,13 @@ tabs:
                       fields:
                         -
                           import: editor
+                    single_image:
+                      display: Einzelbild
+                      instructions: 'Einzelbild hinzufügen'
+                      icon: media-image-picture-orientation
+                      fields:
+                        -
+                          import: single_image
                 special_elements:
                   display: Spezialelemente
                   icon: addon-boxes-stack

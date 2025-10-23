@@ -1,6 +1,14 @@
 title: Einzelbild
 fields:
   -
+    handle: has_pattern
+    field:
+      default: true
+      type: toggle
+      display: 'Raster?'
+      instructions: 'Hintergrund-Raster hinzufügen'
+      localizable: false
+  -
     handle: image
     field:
       max_files: 1
@@ -8,3 +16,20 @@ fields:
       type: assets
       display: Bild
       localizable: false
+  -
+    handle: has_link
+    field:
+      type: toggle
+      display: 'Link?'
+      localizable: false
+  -
+    handle: link
+    field:
+      collections:
+        - pages
+      container: assets
+      type: link
+      display: Link
+      localizable: false
+      if:
+        has_link: 'equals true'

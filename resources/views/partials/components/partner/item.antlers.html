@@ -1,0 +1,24 @@
+<div class="col-span-full sm:col-span-5 lg:col-span-4">
+  {{ if image }}
+    <div class="relative">
+      {{ partial:components/media/image 
+        preset="teaser" 
+        :sizes="['md', 'lg']"
+        class="aspect-[4/3] w-full h-full object-cover relative z-10" }}
+        <div class="absolute inset-0 z-20 bg-white/40"></div>
+        {{ if logo }}
+          <img src="{{ logo }}" alt="{{ title }}" width="{{ logo:width }}" height="{{ logo:height }}" class="w-full h-auto absolute z-30 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        {{ /if }}
+      </div>
+      <div class="h-10 lg:h-17 w-full bg-pattern" aria-hidden="true">
+      </div>
+  {{ /if }}
+  {{ if title }}
+    {{ partial:components/headings/h2 class="text-md lg:text-xl !mt-10 lg:!mt-15 mb-5 lg:mb-10" }}
+      {{ title }}
+    {{ /partial:components/headings/h2 }}
+  {{ /if }}
+  {{ if editor }}
+    {{ partial:components/editor/wrapper }}
+  {{ /if }}
+</div>

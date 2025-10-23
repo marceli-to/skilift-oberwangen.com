@@ -14,6 +14,10 @@
      {{ partial:components/teaser/wrapper }}
     {{ /if }}
 
+    {{ if type == 'partner' }}
+     {{ partial:components/partner/wrapper }}
+    {{ /if }}
+
     {{ if type == 'sponsors' }}
       {{ partial:components/sponsors }}
     {{ /if }}
