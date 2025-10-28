@@ -18,7 +18,7 @@ tabs:
               collections:
                 - pages
               type: link
-              display: 'Arosa Stübli'
+              display: 'Arosastübli'
               localizable: false
           -
             handle: url_webcam

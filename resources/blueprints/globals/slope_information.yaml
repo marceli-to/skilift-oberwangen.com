@@ -40,7 +40,7 @@ tabs:
             field:
               default: true
               type: toggle
-              display: 'Arosa Stübli'
+              display: 'Arosastübli'
               localizable: false
               width: 33
           -

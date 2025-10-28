@@ -34,7 +34,7 @@ tabs:
                 - pages
               container: assets
               type: bard
-              display: 'Arosa Stübli'
+              display: 'Arosastübli'
               localizable: false
           -
             handle: operations
