@@ -118,16 +118,6 @@ tabs:
               instructions: 'Definiert die Anzahl Plätze für diesen Kurs'
               localizable: false
           -
-            handle: invoice
-            field:
-              max_files: 1
-              container: assets
-              folder: rechnungen
-              type: assets
-              display: 'EZS / QR Rechnung'
-              instructions: 'Wird mit dem Bestätigungsmail versendet'
-              localizable: false
-          -
             handle: text_email
             field:
               default: |-

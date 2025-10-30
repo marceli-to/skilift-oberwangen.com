@@ -44,11 +44,6 @@ class UserConfirmation extends Notification
       ->replyTo(env('MAIL_REPLY_TO_ADDRESS'))
       ->subject('Anmeldung ' . $this->data['title'])
       ->markdown('notifications.course.user-confirmation', ['data' => $this->data]);
-
-    if (isset($this->data['invoice']) && !is_null($this->data['invoice'])) {
-      $message->attach(public_path($this->data['invoice']));
-    }
-
     return $message;
   }
 
