@@ -1,14 +1,16 @@
 <div id="anmeldung" class="scroll-mt-20">
   {{ partial:partials/layout/container/inner }}
-    {{ partial:components/headings/h1 class="leading-none mb-20 lg:mb-40" }}
-      Anmeldung
-    {{ /partial:components/headings/h1 }}
     {{ nocache }}
       {{ collection:courses as="courses" sort="course_date:asc" course_date:is_after="{now modify_date='-1 day' format='Y-m-d'}" limit="{{ limit ? 3 : null }}" }}
         {{ if courses }}
+          {{ partial:components/headings/h1 class="leading-none mb-20 lg:mb-40" }}
+            Anmeldung
+          {{ /partial:components/headings/h1 }}
           {{ courses }}
             {{ partial:courses/item }}
           {{ /courses }}
+        {{ else }}
+          <p><strong>Aktuell sind keine Kurse verfügbar.</strong></p>
         {{ /if }}
       {{ /collection:courses }}
     {{ /nocache }}
