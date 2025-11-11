@@ -100,8 +100,10 @@ import FormCheckbox from '@/forms/components/fields/checkbox.vue';
 import SuccessAlert from '@/forms/components/alerts/success.vue';
 import ErrorAlert from '@/forms/components/alerts/error.vue';
 import { useFormScroll } from '@/composables/useFormScroll';
+import { useRecaptcha } from '@/composables/useRecaptcha';
 
 const { scrollToForm } = useFormScroll();
+const { executeRecaptcha } = useRecaptcha();
 const isSubmitting = ref(false);
 const formSuccess = ref(false);
 const formError = ref(false);
@@ -138,9 +140,14 @@ async function submitForm() {
   isSubmitting.value = true;
   formSuccess.value = false;
   formError.value = false;
+
   try {
+    // Execute reCAPTCHA v3 and get token
+    const recaptchaToken = await executeRecaptcha('contact_form');
+
     const response = await axios.post('/api/contact/submit', {
-      ...form.value
+      ...form.value,
+      recaptcha_token: recaptchaToken
     });
     handleSuccess();
   } catch (error) {
