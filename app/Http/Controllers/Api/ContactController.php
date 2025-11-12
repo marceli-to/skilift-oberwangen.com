@@ -37,13 +37,23 @@ class ContactController extends Controller
             ->data($data)
             ->save();
 
-        Notification::route('mail', env('MAIL_TO'))
-            ->notify(new OwnerInformation($data)
-            );
+        try {
+            Notification::route('mail', env('MAIL_TO'))->notify(new OwnerInformation($data));
+        } catch (\Exception $e) {
+            \Log::error('Failed to send owner notification for contact form: '.$e->getMessage(), [
+                'email' => env('MAIL_TO'),
+                'data' => $data,
+            ]);
+        }
 
-        Notification::route('mail', $data['email'])
-            ->notify(new UserConfirmation($data)
-            );
+        try {
+            Notification::route('mail', $data['email'])->notify(new UserConfirmation($data));
+        } catch (\Exception $e) {
+            \Log::error('Failed to send user confirmation for contact form: '.$e->getMessage(), [
+                'email' => $data['email'],
+                'data' => $data,
+            ]);
+        }
 
         return response()->json(['message' => 'Store successful']);
     }
