@@ -5,15 +5,16 @@
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       @focus="$emit('update:error', '')"
-      :placeholder="placeholder"
+      :placeholder="placeholderText"
       :class="[
-        { '!border-red-500 placeholder:!text-red-500': error },
+        { '!border-red-500 placeholder:!text-red-500': errorMessage },
       ]"
     >
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue';
 
 const props = defineProps({
   modelValue: {
@@ -25,13 +26,21 @@ const props = defineProps({
     default: 'text'
   },
   placeholder: {
-    type: String,
+    type: [String, Array],
     default: ''
   },
   error: {
-    type: String,
+    type: [String, Array],
     default: ''
   },
+});
+
+const errorMessage = computed(() => {
+  return Array.isArray(props.error) ? props.error[0] : props.error;
+});
+
+const placeholderText = computed(() => {
+  return Array.isArray(props.placeholder) ? props.placeholder[0] : props.placeholder;
 });
 
 defineEmits(['update:modelValue', 'update:error']);

@@ -13,7 +13,7 @@
         @change="handleChange"
         class="mt-2 shrink-0"
         :class="[
-          { '!border-red-500': error },
+          { '!border-red-500': errorMessage },
         ]"
       />
       <label :for="id" v-html="label"></label>
@@ -55,7 +55,7 @@ const props = defineProps({
     default: '',
   },
   error: {
-    type: String,
+    type: [String, Array],
     default: '',
   },
 });
@@ -63,6 +63,10 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue', 'update:error']);
 
 const checked = computed(() => props.modelValue);
+
+const errorMessage = computed(() => {
+  return Array.isArray(props.error) ? props.error[0] : props.error;
+});
 
 function handleChange(event) {
   emit('update:modelValue', event.target.checked);

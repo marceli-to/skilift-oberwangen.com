@@ -68,6 +68,7 @@
           :placeholder="errors.message ? errors.message : 'Nachricht *'"
         />
       </form-group>
+      <input type="text" name="website" v-model="form.website" tabindex="-1" autocomplete="off" />
     </div>
     <form-group>
       <form-checkbox
@@ -90,7 +91,7 @@
   </form>
 </template>
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import axios from 'axios';
 import FormGroup from '@/forms/components/fields/group.vue';
 import FormTextField from '@/forms/components/fields/text.vue';
@@ -107,6 +108,11 @@ const { executeRecaptcha } = useRecaptcha();
 const isSubmitting = ref(false);
 const formSuccess = ref(false);
 const formError = ref(false);
+const formStartTime = ref(null);
+
+onMounted(() => {
+  formStartTime.value = Date.now();
+});
 
 const form = ref({
   name: null,
@@ -116,7 +122,8 @@ const form = ref({
   location: null,
   email: null,
   message: null,
-  privacy: false
+  privacy: false,
+  website: ''
 });
 
 const errors = ref({
@@ -147,7 +154,8 @@ async function submitForm() {
 
     const response = await axios.post('/api/contact/submit', {
       ...form.value,
-      recaptcha_token: recaptchaToken
+      recaptcha_token: recaptchaToken,
+      _start: formStartTime.value
     });
     handleSuccess();
   } catch (error) {
@@ -165,6 +173,7 @@ function handleSuccess() {
     message: null,
     phone: null,
     privacy: false,
+    website: '',
   };
   
   errors.value = {
@@ -180,6 +189,7 @@ function handleSuccess() {
   
   isSubmitting.value = false;
   formSuccess.value = true;
+  formStartTime.value = Date.now(); // Reset timer for next submission
   scrollToForm();
 }
 

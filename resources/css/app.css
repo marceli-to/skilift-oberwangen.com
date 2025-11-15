@@ -111,3 +111,8 @@ textarea {
   field-sizing: content;
   @apply min-h-[125px] text-navy placeholder:text-navy
 }
+
+/* Honeypot field */
+input[name="website"] {
+  @apply !hidden !absolute !left-0 !top-0 !w-0 !h-0 overflow-hidden !opacity-0 pointer-events-none
+}
