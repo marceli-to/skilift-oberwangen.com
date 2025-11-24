@@ -33,6 +33,8 @@ class CourseRegistrationRequest extends FormRequest
             'email' => 'required|email|regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/',
             'privacy' => 'accepted',
             'recaptcha_token' => 'required',
+            'website' => 'nullable|max:0',
+            '_start' => 'required|integer',
         ];
     }
 
@@ -57,6 +59,7 @@ class CourseRegistrationRequest extends FormRequest
             'email.regex' => 'E-Mail muss gültig sein',
             'privacy.accepted' => 'Die Datenschutzbestimmungen müssen akzeptiert werden',
             'recaptcha_token.required' => 'reCAPTCHA Verifizierung fehlgeschlagen',
+            'website.max' => 'Website ist falsch',
         ];
     }
 
@@ -66,6 +69,16 @@ class CourseRegistrationRequest extends FormRequest
     public function withValidator($validator): void
     {
         $validator->after(function ($validator) {
+            // Check if form was submitted too quickly (bot detection)
+            $startTime = $this->input('_start');
+            if ($startTime) {
+                $elapsedTime = now()->timestamp * 1000 - $startTime;
+                if ($elapsedTime < config('spam-protection.min_submit_time')) {
+                    $validator->errors()->add('error', 'Something went wrong. Please try again.');
+                    return;
+                }
+            }
+
             if (! $this->verifyRecaptcha()) {
                 $validator->errors()->add('recaptcha_token', 'reCAPTCHA Verifizierung fehlgeschlagen. Bitte versuchen Sie es erneut.');
             }

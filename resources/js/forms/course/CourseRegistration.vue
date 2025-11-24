@@ -1,14 +1,4 @@
 <template>
-  <template v-if="formSuccess">
-    <success-alert>
-      Vielen Dank für Ihre Anmeldung!
-    </success-alert>
-  </template>
-  <template v-if="formError">
-    <error-alert>
-      Bitte überprüfen Sie die eingegebenen Daten.
-    </error-alert>
-  </template>
   <template v-if="!hasOpenSeats">
     <h2 class="text-scarlet text-xl md:text-2xl leading-none mb-20 lg:mb-40">
       Kurs Ausgebucht
@@ -118,6 +108,7 @@
               aria-label="Mitteilungen"
             />
           </form-group>
+          <input type="text" name="website" v-model="form.website" tabindex="-1" autocomplete="off" />
         </div>
         <div class="max-w-4xl">
           Die Anmeldung für den Skikurs ist verbindlich. Vor Beginn des Kurses muss die Skistunde am Skischulwagen bezahlt werden. Anschliessend erhalten Sie dort eine Skischulweste. Die Bezahlung kann entweder mit Twint oder in bar erfolgen.
@@ -142,6 +133,16 @@
         </form-group>
       </div>
     </form>
+  </template>
+  <template v-if="formSuccess">
+    <success-alert>
+      Vielen Dank für Ihre Anmeldung!
+    </success-alert>
+  </template>
+  <template v-if="formError">
+    <error-alert>
+      Bitte überprüfen Sie die eingegebenen Daten.
+    </error-alert>
   </template>
 </template>
 <script setup>
@@ -171,21 +172,23 @@ const isSubmitting = ref(false);
 const isLoaded = ref(false);
 const formSuccess = ref(false);
 const formError = ref(false);
+const formStartTime = ref(null);
 
 const hasOpenSeats = ref(false);
 
 const form = ref({
   course_id: props.courseId,
-  name: null,
-  firstname: null,
-  dob: null,
-  name_parents: null,
-  street: null,
-  location: null,
-  phone: null,
-  email: null,
+  name: 'Muster',
+  firstname: 'Max',
+  dob: '15.03.2018',
+  name_parents: 'Hans Muster',
+  street: 'Musterstrasse 123',
+  location: '8000 Zürich',
+  phone: '079 123 45 67',
+  email: 'test@example.com',
   remarks: null,
-  privacy: false
+  privacy: false,
+  website: ''
 });
 
 const errors = ref({
@@ -203,6 +206,7 @@ const errors = ref({
 
 
 onMounted(async () => {
+  formStartTime.value = Date.now();
   try {
     const response = await axios.get(`/api/course/${props.courseId}`);
     isLoaded.value = true;
@@ -224,7 +228,8 @@ async function submitForm() {
 
     const response = await axios.post('/api/course/register', {
       ...form.value,
-      recaptcha_token: recaptchaToken
+      recaptcha_token: recaptchaToken,
+      _start: formStartTime.value
     });
     handleSuccess();
   } catch (error) {
@@ -244,8 +249,11 @@ function handleSuccess() {
     phone: null,
     email: null,
     remarks: null,
-    privacy: false
+    privacy: false,
+    website: ''
   };
+
+  formStartTime.value = Date.now();
 
   errors.value = {
     name: '',
@@ -262,7 +270,6 @@ function handleSuccess() {
 
   isSubmitting.value = false;
   formSuccess.value = true;
-  scrollToForm();
 }
 
 function handleError(error) {
@@ -273,6 +280,5 @@ function handleError(error) {
       errors.value[key] = error.response.data.errors[key];
     });
   }
-  scrollToForm();
 }
 </script>

@@ -1,14 +1,4 @@
 <template>
-  <template v-if="formSuccess">
-    <success-alert>
-      Vielen Dank für Ihre Anfrage!
-    </success-alert>
-  </template>
-  <template v-if="formError">
-    <error-alert>
-      Bitte überprüfen Sie die eingegebenen Daten.
-    </error-alert>
-  </template>
   <form @submit.prevent="submitForm" class="space-y-10 lg:space-y-25">
     <div class="lg:w-1/2 flex flex-col gap-10 lg:gap-20">
       <form-group>
@@ -81,14 +71,24 @@
       />
     </form-group>
     <form-group class="!mt-30 lg:!mt-35">
-      <form-button 
-        type="submit" 
+      <form-button
+        type="submit"
         :label="'Absenden'"
         :disabled="isSubmitting"
         :submitting="isSubmitting"
       />
     </form-group>
   </form>
+  <template v-if="formSuccess">
+    <success-alert>
+      Vielen Dank für Ihre Anfrage!
+    </success-alert>
+  </template>
+  <template v-if="formError">
+    <error-alert>
+      Bitte überprüfen Sie die eingegebenen Daten.
+    </error-alert>
+  </template>
 </template>
 <script setup>
 import { ref, watch, onMounted } from 'vue';
@@ -100,10 +100,8 @@ import FormButton from '@/forms/components/fields/button.vue';
 import FormCheckbox from '@/forms/components/fields/checkbox.vue';
 import SuccessAlert from '@/forms/components/alerts/success.vue';
 import ErrorAlert from '@/forms/components/alerts/error.vue';
-import { useFormScroll } from '@/composables/useFormScroll';
 import { useRecaptcha } from '@/composables/useRecaptcha';
 
-const { scrollToForm } = useFormScroll();
 const { executeRecaptcha } = useRecaptcha();
 const isSubmitting = ref(false);
 const formSuccess = ref(false);
@@ -115,13 +113,13 @@ onMounted(() => {
 });
 
 const form = ref({
-  name: null,
-  firstname: null,
-  phone: null,
-  street: null,
-  location: null,
-  email: null,
-  message: null,
+  name: 'Muster',
+  firstname: 'Max',
+  phone: '079 123 45 67',
+  street: 'Musterstrasse 123',
+  location: '8000 Zürich',
+  email: 'test@example.com',
+  message: 'Dies ist eine Testnachricht.',
   privacy: false,
   website: ''
 });
@@ -190,7 +188,6 @@ function handleSuccess() {
   isSubmitting.value = false;
   formSuccess.value = true;
   formStartTime.value = Date.now(); // Reset timer for next submission
-  scrollToForm();
 }
 
 function handleError(error) {
@@ -202,6 +199,5 @@ function handleError(error) {
       errors.value[key] = error.response.data.errors[key];
     });
   }
-  scrollToForm();
 }
 </script>
