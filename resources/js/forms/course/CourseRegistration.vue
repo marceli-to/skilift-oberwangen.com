@@ -178,14 +178,14 @@ const hasOpenSeats = ref(false);
 
 const form = ref({
   course_id: props.courseId,
-  name: 'Muster',
-  firstname: 'Max',
-  dob: '15.03.2018',
-  name_parents: 'Hans Muster',
-  street: 'Musterstrasse 123',
-  location: '8000 Zürich',
-  phone: '079 123 45 67',
-  email: 'test@example.com',
+  name: null,
+  firstname: null,
+  dob: null,
+  name_parents: null,
+  street: null,
+  location: null,
+  phone: null,
+  email: null,
   remarks: null,
   privacy: false,
   website: ''

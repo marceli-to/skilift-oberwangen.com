@@ -113,13 +113,13 @@ onMounted(() => {
 });
 
 const form = ref({
-  name: 'Muster',
-  firstname: 'Max',
-  phone: '079 123 45 67',
-  street: 'Musterstrasse 123',
-  location: '8000 Zürich',
-  email: 'test@example.com',
-  message: 'Dies ist eine Testnachricht.',
+  name: null,
+  firstname: null,
+  phone: null,
+  street: null,
+  location: null,
+  email: null,
+  message: null,
   privacy: false,
   website: ''
 });
