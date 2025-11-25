@@ -20,7 +20,7 @@ const props = defineProps({
   },
   classes: {
     type: String,
-    default: 'bg-azure hover:bg-navy transition-all text-white uppercase font-bold flex items-center gap-x-10 lg:gap-x-15 px-10 lg:px-20 pt-6 pb-7 lg:pt-8 lg:pb-9 text-xxs lg:text-xs leading-none'
+    default: 'bg-azure hover:bg-navy transition-all text-white uppercase font-bold flex items-center gap-x-10 lg:gap-x-15 px-10 lg:px-20 pt-6 pb-7 lg:pt-8 lg:pb-9 text-xxs lg:text-xs leading-none !no-underline'
   },
   disabled: {
     type: Boolean,
