@@ -71,6 +71,10 @@ section.bg-sky + section.bg-sky {
   @apply !pt-10 lg:!pt-20;
 }
 
+article a:not(button) {
+  @apply underline underline-offset-2 decoration-1 hover:no-underline
+}
+
 /* Patterns */
 .bg-pattern {
   /* https://stripesgenerator.com/ */
