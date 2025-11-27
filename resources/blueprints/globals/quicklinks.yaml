@@ -18,13 +18,11 @@ tabs:
               collections:
                 - pages
               type: link
-              display: 'Arosastübli'
+              display: Arosastübli
               localizable: false
           -
-            handle: url_webcam
+            handle: webcam
             field:
-              collections:
-                - pages
-              type: link
+              type: textarea
               display: Webcam
               localizable: false
