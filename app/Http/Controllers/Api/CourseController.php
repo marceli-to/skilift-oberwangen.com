@@ -29,7 +29,7 @@ class CourseController extends Controller
 
         // build data
         $data = [
-            'title' => $course->title.' – '.$course->course_date->format('d.m.Y'),
+            'title' => $course->title.' – '.$course->course_date->format('d.m.Y').' – '.$course->course_start,
             'course_id' => $course->id,
             'course_date' => $course->course_date ? $course->course_date->format('d.m.Y') : null,
             'name' => $request->input('name'),
