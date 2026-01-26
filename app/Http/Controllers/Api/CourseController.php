@@ -67,10 +67,10 @@ class CourseController extends Controller
         }
 
         try {
-            Notification::route('mail', env('MAIL_TO'))->notify(new OwnerInformation($data));
+            Notification::route('mail', env('MAIL_TO_COURSE', env('MAIL_TO')))->notify(new OwnerInformation($data));
         } catch (\Exception $e) {
             \Log::error('Failed to send owner notification for course registration: '.$e->getMessage(), [
-                'email' => env('MAIL_TO'),
+                'email' => env('MAIL_TO_COURSE', env('MAIL_TO')),
                 'course_id' => $course->id,
                 'data' => $data,
             ]);
